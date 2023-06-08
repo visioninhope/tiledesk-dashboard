@@ -187,6 +187,7 @@ export class WsRequestsListComponent extends WsSharedComponent implements OnInit
   upgradePlan: string;
   cPlanOnly: string;
   prjct_profile_name: string;
+  onlyUserWithOwnerRoleCanManageAdvancedProjectSettings: string;
   /**
    * 
    * @param wsRequestsService 
@@ -438,6 +439,10 @@ export class WsRequestsListComponent extends WsSharedComponent implements OnInit
     this.translate.get('AvailableWithThePlan', { plan_name: PLAN_NAME.C })
       .subscribe((translation: any) => {
         this.cPlanOnly = translation;
+      });
+    this.translate.get('OnlyUserWithOwnerRoleCanManageAdvancedProjectSettings')
+      .subscribe((translation: any) => {
+        this.onlyUserWithOwnerRoleCanManageAdvancedProjectSettings = translation;
       });
   }
 
@@ -1004,7 +1009,7 @@ export class WsRequestsListComponent extends WsSharedComponent implements OnInit
   }
 
   presentModalAgentCannotManageAvancedSettings() {
-    this.notify.presentModalOnlyOwnerCanManageTheAccountPlan(this.agentCannotManageAdvancedOptions, this.learnMoreAboutDefaultRoles)
+    this.notify.presentModalOnlyOwnerCanManageAdvancedProjectSettings(this.onlyUserWithOwnerRoleCanManageAdvancedProjectSettings, this.learnMoreAboutDefaultRoles)
   }
 
   // NOT USED 
