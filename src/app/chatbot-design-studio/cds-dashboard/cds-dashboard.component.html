@@ -8,15 +8,30 @@
     (toggleSidebarWith)="onToggleSidebarWith($event)">
 </cds-header>
 
-<div id="chatbot--dashboard" class="chatboat-dashboard" [class.is_opened_sidebar]="IS_OPEN">
-    <!-- [class.is_opened]="IS_OPEN" -->
-    <cds-sidebar class="cds-sidebar" [extendedWidth]="IS_OPEN" [projectID]="projectID"
-        (onClickItemList)="onClickItemList($event)" (goToBck)="goBack()">
+<div id="chatbot--dashboard" class="chatboat-dashboard" 
+    [class.is_opened_sidebar]="IS_OPEN">
+    <cds-sidebar class="cds-sidebar" 
+        [extendedWidth]="IS_OPEN" 
+        [projectID]="projectID"
+        (onClickItemList)="onClickItemList($event)" 
+        (goToBck)="goBack()">
     </cds-sidebar>
+
+    <div class="cds-toggle-setting-sidebar-icon-right-wpr"
+        (click)="onToogleSidebarIntentsList(IS_OPEN_INTENTS_LIST = !IS_OPEN_INTENTS_LIST)">
+        <!-- <span *ngIf="IS_OPEN_INTENTS_LIST" class="material-icons cds-toggle-setting-sidebar-icon">
+            chevron_left
+        </span> -->
+        <span *ngIf="!IS_OPEN_INTENTS_LIST" class="material-icons cds-toggle-setting-sidebar-icon">
+            chevron_right
+        </span>
+    </div>
 
     <div *ngIf="activeSidebarSection == 'cds-sb-intents'" class="cds-content">
 
         <div class="box-left" [class.is_closed]="!IS_OPEN_INTENTS_LIST">
+
+           
             <cds-panel-intent-list *ngIf="listOfIntents"
                 [IS_OPEN]="IS_OPEN_INTENTS_LIST"
                 class="panel-intent-list"
@@ -27,14 +42,14 @@
                 (deleteIntent)="onDeleteIntent($event)">
             </cds-panel-intent-list>
 
-            <div class="toggle-setting-sidebar-icon-wpr" [class.is_opened]="IS_OPEN_INTENTS_LIST"
+            <div class="cds-toggle-setting-sidebar-icon-left-wpr" [class.is_opened]="IS_OPEN_INTENTS_LIST"
                 (click)="onToogleSidebarIntentsList(IS_OPEN_INTENTS_LIST = !IS_OPEN_INTENTS_LIST)">
-                <span *ngIf="IS_OPEN_INTENTS_LIST" class="material-icons toggle-setting-sidebar-icon">
+                <span *ngIf="IS_OPEN_INTENTS_LIST" class="material-icons cds-toggle-setting-sidebar-icon">
                     chevron_left
                 </span>
-                <span *ngIf="!IS_OPEN_INTENTS_LIST" class="material-icons toggle-setting-sidebar-icon">
+                <!-- <span *ngIf="!IS_OPEN_INTENTS_LIST" class="material-icons cds-toggle-setting-sidebar-icon">
                     chevron_right
-                </span>
+                </span> -->
             </div>
 
         </div>

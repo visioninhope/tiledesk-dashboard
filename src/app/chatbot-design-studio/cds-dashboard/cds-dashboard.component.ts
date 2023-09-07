@@ -211,7 +211,7 @@ export class CdsDashboardComponent implements OnInit {
     this.connectorService.initializeConnectors();
 
     this.addEventListener();
- 
+
   }
 
   ngOnDestroy() {
@@ -220,7 +220,7 @@ export class CdsDashboardComponent implements OnInit {
     this.connectorService.deleteAllConnectors();
   }
 
-  onHideActionPlaceholderOfActionPanel(event){
+  onHideActionPlaceholderOfActionPanel(event) {
     console.log('[CDS DSHBRD] onHideActionPlaceholderOfActionPanel event : ', event);
     this.hideActionPlaceholderOfActionPanel = event
   }
@@ -289,7 +289,7 @@ export class CdsDashboardComponent implements OnInit {
     let that = this;
 
     /** LISTENER OF TILEDESK STAGE */
-    
+
     /** moved-and-scaled ** 
      * scatta quando sposto lo stage (lo muovo o lo scalo):
      * - imposto la scala
@@ -325,7 +325,7 @@ export class CdsDashboardComponent implements OnInit {
 
 
     /** LISTNER OF TILEDESK CONNECTORS */
-     
+
     /** connector-draft-released ** 
      * scatta solo quando NON viene creato un connettore, cioè quando rilascio il connettore tratteggiato in un punto che non è "collegabile"
      * se lo rilascio sullo stage ed 'e.detail' è completo della posizione di partenza e di arrivo del connettore posso aprire il float menu
@@ -335,7 +335,7 @@ export class CdsDashboardComponent implements OnInit {
     document.addEventListener(
       "connector-draft-released", (e: CustomEvent) => {
         console.log("evento -> connector-draft-released :: ", e.detail);
-        if(!e || !e.detail) return;
+        if (!e || !e.detail) return;
         const detail = e.detail;
         const arrayOfClass = detail.target.classList.value.split(' ');
         if (detail.target && arrayOfClass.includes("receiver-elements-dropped-on-stage") && detail.toPoint && detail.menuPoint) {
@@ -431,18 +431,18 @@ export class CdsDashboardComponent implements OnInit {
 
 
 
-  private openFloatMenuOnConnectorDraftReleased(detail){
-        console.log("ho rilasciato in un punto qualsiasi dello stage e quindi apro il float menu", detail);
-        this.positionFloatMenu = this.tiledeskStage.physicPointCorrector(detail.menuPoint);
-        this.positionFloatMenu.x = this.positionFloatMenu.x + 300;
-        detail.menuPoint = this.positionFloatMenu;
-        console.log('[CDS DSHBRD] this.positionFloatMenu', this.positionFloatMenu);
-        this.isOpenAddActionsMenu = true;
-        this.hasClickedAddAction = false;
-        this.IS_OPEN_PANEL_WIDGET = false;
-        this.controllerService.closeActionDetailPanel();
-        this.connectorService.createConnectorDraft(detail);
-        console.log('[CDS DSHBRD] OPEN MENU hasClickedAddAction', this.hasClickedAddAction);
+  private openFloatMenuOnConnectorDraftReleased(detail) {
+    console.log("ho rilasciato in un punto qualsiasi dello stage e quindi apro il float menu", detail);
+    this.positionFloatMenu = this.tiledeskStage.physicPointCorrector(detail.menuPoint);
+    this.positionFloatMenu.x = this.positionFloatMenu.x + 300;
+    detail.menuPoint = this.positionFloatMenu;
+    console.log('[CDS DSHBRD] this.positionFloatMenu', this.positionFloatMenu);
+    this.isOpenAddActionsMenu = true;
+    this.hasClickedAddAction = false;
+    this.IS_OPEN_PANEL_WIDGET = false;
+    this.controllerService.closeActionDetailPanel();
+    this.connectorService.createConnectorDraft(detail);
+    console.log('[CDS DSHBRD] OPEN MENU hasClickedAddAction', this.hasClickedAddAction);
   }
 
   /**
@@ -726,7 +726,7 @@ export class CdsDashboardComponent implements OnInit {
 
     /** chiamata quando trascino un connettore sullo stage e creo un intent al volo  */
     const connectorDraft = this.connectorService.connectorDraft;
-    if(connectorDraft){
+    if (connectorDraft) {
       const fromId = connectorDraft.fromId;
       const toId = this.intentSelected.intent_id;
       console.log('[CDS-DSHBRD] sto per creare il connettore ', connectorDraft, fromId, toId);
@@ -901,8 +901,19 @@ export class CdsDashboardComponent implements OnInit {
 
   /** SIDEBAR OUTPUT EVENTS */
   onClickItemList(event: string) {
-    this.logger.log('[CDS DSHBRD] active section-->', event)
+    console.log('[CDS DSHBRD] active section-->', event)
     this.activeSidebarSection = event;
+    let chevronRightEl = <HTMLElement>document.querySelector('.cds-toggle-setting-sidebar-icon-right-wpr')
+    console.log('[CDS DSHBRD] active section --> chevronRightEl', chevronRightEl);
+    if (event !== 'cds-sb-intents') {
+      if (chevronRightEl) {
+        chevronRightEl.style.zIndex = '-1'
+      }
+    } else if (event == 'cds-sb-intents') {
+      if (chevronRightEl) {
+        chevronRightEl.style.zIndex = '1050'
+      }
+    }
   }
 
   /** Go back to previous page */
@@ -934,8 +945,10 @@ export class CdsDashboardComponent implements OnInit {
   onToggleSidebarWith(IS_OPEN) {
     this.IS_OPEN = IS_OPEN;
   }
+
   onToogleSidebarIntentsList(IS_OPEN) {
     this.IS_OPEN_INTENTS_LIST = IS_OPEN
+    console.log('[CDS DSHBRD] onToogleSidebarIntentsList IS_OPEN_INTENTS_LIST ', IS_OPEN)
   }
 
   /** START EVENTS PANEL ACTIONS */
@@ -968,7 +981,7 @@ export class CdsDashboardComponent implements OnInit {
     // -------------------------------------------------------------------------
     // this.isOpenAddActionsMenu = false; // nk
     const connectorDraft = this.connectorService.connectorDraft;
-    
+
     if (connectorDraft && connectorDraft.toPoint && !this.hasClickedAddAction) {
       console.log('[CDS-DSHBRD] trascino connettore sullo stage ', event, connectorDraft.toPoint, this.hasClickedAddAction);
       const toPoint = connectorDraft.toPoint;

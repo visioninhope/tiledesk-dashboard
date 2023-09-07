@@ -167,14 +167,15 @@ li > a {
 ///
 
 .content {
-    margin-top: 20px;
+    // margin-top: 20px;
+   
     width: 100%;
     display: flex;
     //display: none;
     flex-direction: column;
     align-items: center;
-    padding-left: 5px;
-    padding-right: 5px;
+    // padding-left: 5px;
+    // padding-right: 5px;
     
     &.is_opened {
 
@@ -194,12 +195,13 @@ li > a {
     display: flex;
     justify-content: center;
     align-items: center;
-    margin-bottom: 10px;
+    // margin-bottom: 10px;
     padding: 5px 12px;
-    border-radius: 4px;
+    // border-radius: 4px;
     transition: all .3s;
     width: 100%;
     cursor: pointer;
+    height: 60px;
 
     .item-label {
         margin-bottom: 0px;
@@ -208,7 +210,8 @@ li > a {
     }
 
     .item-icon {
-        color: $icon-color;
+        // color: $icon-color;
+        color: $gray-03;
     }
 
 }
@@ -226,7 +229,7 @@ li > a {
 }
 
 .is_active {
-    background-color: $icon-color;
+    // background-color: $icon-color;
 
     .item-icon {
         color: white;

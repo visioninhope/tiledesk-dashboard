@@ -1,9 +1,16 @@
-<div class="header-left" [class.is_opened]="IS_OPEN">
+<div class="header-left" [class.is_opened]="IS_OPEN" 
+    style="cursor:pointer"
+    (click)="goToBack()"
+    matTooltipClass="custom-mat-tooltip"
+    matTooltip="Go back to chatbot list" 
+    #tooltip="matTooltip" 
+    matTooltipPosition='below'
+    matTooltipHideDelay="100">
     <img *ngIf="!IS_OPEN" src="assets/img/logos/tiledesk_logo_white_small.svg">
     <img *ngIf="IS_OPEN" src="assets/img/logos/tiledesk-logo_new_white.svg">
 </div>
 <div class="header-right">
-    <div class="toggle-setting-sidebar-icon-wpr" [class.is_opened]="IS_OPEN"
+    <!-- <div class="toggle-setting-sidebar-icon-wpr" [class.is_opened]="IS_OPEN"
         (click)="onToggleSidebarWith(IS_OPEN = !IS_OPEN)">
         <span *ngIf="IS_OPEN" class="material-icons toggle-setting-sidebar-icon">
             chevron_left
@@ -11,9 +18,11 @@
         <span *ngIf="!IS_OPEN" class="material-icons toggle-setting-sidebar-icon">
             chevron_right
         </span>
-    </div>
+    </div> -->
     <!-- <i class="material-icons cds-btn-back" (click)="goBack()">keyboard_arrow_left</i> -->
-    <div class="header-title">{{ selectedChatbot?.name }}</div>
+    <div class="header-title-wpr">
+        <div class="header-title">{{ selectedChatbot?.name }}</div>
+    </div>
     <div class="right-opts">
         <div *ngIf="isBetaUrl">
             <button class="btn btn-primary pull-right cds-blue-button cds-beta"
@@ -72,25 +81,25 @@
                 Try on WhatsApp
             </button>
         </div>
-        <div>
+        <div class="cds-test-it-out-btn-wpr" >
             <button id="cds-test-it-out-btn" class="btn btn-primary pull-right cds-blue-button cds-test-it-out"
                 type="button" (click)="openTestSiteInPopupWindow()"
                 matTooltipClass="custom-mat-tooltip"
-                matTooltip="Test it" #tooltip="matTooltip" matTooltipPosition='below'
+                matTooltip="Start test" 
+                #tooltip="matTooltip" 
+                matTooltipPosition='below'
                 matTooltipHideDelay="100">
                 <span class="material-icons">
                     play_arrow
                 </span>
             </button>
         </div>
-        <div class="cds-close-btn-wpr">
-
+        <!-- <div class="cds-close-btn-wpr">
             <button class="btn pull-right cds-close-btn" (click)="goToBack()">
                 <span class="material-icons cds-close-btn-icon">
                     clear
                 </span>
             </button>
-
-        </div>
+        </div> -->
     </div>
 </div>

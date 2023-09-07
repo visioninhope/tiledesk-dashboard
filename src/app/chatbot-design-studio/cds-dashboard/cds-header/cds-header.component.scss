@@ -75,7 +75,19 @@ $margin-top-card: 30px;
     }
 
     .header-title {
-        margin-left: 20px;
+        // margin-left: 20px;
+        color: $blu-01;
+        position: absolute;
+        left: 50%;
+        // -webkit-transform: translateX(-50%);
+        // transform: translateX(-50%);
+        top: 0px;
+        max-width: 250px;
+        overflow: hidden;
+        // font-size: 15px;
+        white-space: nowrap;
+        text-overflow: ellipsis;
+        font-weight: 400;
     }
 
     .cds-test-it-out {
@@ -160,10 +172,16 @@ $margin-top-card: 30px;
 
 }
 
+.cds-test-it-out-btn-wpr {
+    margin-right: 16px;
+}
+
 #cds-test-it-out-btn{
     background-color: transparent;
-    border: 1px solid #8ab4f8;
-    color: #8ab4f8;
+    // border: 1px solid #8ab4f8;
+    // color: #8ab4f8;
+    border: 1px solid $blu-02;
+    color: $blu-02;
     border-radius: 10px;
     padding: 5px 12px !important;
 }

@@ -89,10 +89,11 @@ $background-color-active: $icon-color;
 }
 
 .custom-divider {
-    background-color: #334754;
+    // background-color: #334754;
+    background-color: $border-light;
     width: 80%;
     height: 1px;
-    box-shadow: 0px 0px 10px #334754;
+    // box-shadow: 0px 0px 10px #334754;
     margin: 6px 0px 14px 0px;
 }
 
@@ -143,7 +144,7 @@ $background-color-active: $icon-color;
     }
 
     .intent-display-name {
-        color: $text-color;
+        color: $gray-02;
         font-weight: 500;
         margin-bottom: 0px;
         font-size: 14px;
@@ -198,7 +199,7 @@ $background-color-active: $icon-color;
 
 .intent:hover {
     // background-color: #d2d2d2;
-    background-color: $background-color-hover;
+    background-color: $black-01;
 
     .delete-box {
         display: block;

@@ -56,7 +56,7 @@ export class CdsSidebarComponent implements OnInit {
 
 
   goTo(section: "cds-sb-intents" | "cds-sb-fulfillment" | "cds-sb-training" | "cds-sb-rules" | "cds-sb-settings") {
-    // console.log('[CDS-SIDEBAR] goTo item ', section)
+    console.log('[CDS-SIDEBAR] goTo item ', section)
 
     // let elements = Array.from(document.getElementsByClassName('section is_active'));
     let elements = this.el.nativeElement.querySelectorAll('.section.is_active')

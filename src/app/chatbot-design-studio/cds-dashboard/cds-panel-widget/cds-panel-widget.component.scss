@@ -1,15 +1,20 @@
-#panel-tab{
+@import "./src/assets/sass/cds/_variables.scss";
+@import "./src/assets/sass/animations.scss";
+
+#panel-tab {
     position: absolute;
-    top:0;
+    top: 0;
     right: 0;
     z-index: 1;
     height: 100%;
     width: 400px;
     display: flex;
     flex-direction: column;
-    background-color: #4d5e79;
-    border-left: solid 2px #b28e26;
-    box-shadow: 0 0 42px 2px #000000c7;
+    // background-color: #4d5e79;
+    background-color: $color-withe-hex;
+    // border-left: solid 2px #b28e26;
+    border-left: solid 1px $border-light;
+    // box-shadow: 0 0 42px 2px #000000c7;
     animation: width 0.9s ease-in-out;
 }
 
@@ -34,39 +39,100 @@
     width: 109px;
     height: 39px;
     background-repeat: no-repeat;
-    background-image: url('/assets/img/tiledesk-logo.png');      
+    background-image: url('/assets/img/tiledesk-logo.png');
     background-size: contain;
     position: absolute;
     top: 50%;
     left: 50%;
     margin: -20px 0 0 -55px;
-    -moz-transition:all 1s ease-in-out;
-    -webkit-transition:all 1s ease-in-out;
-    -o-transition:all 1s ease-in-out;
-    -ms-transition:all 1s ease-in-out;
-    transition:all 1s ease-in-out;
+    -moz-transition: all 1s ease-in-out;
+    -webkit-transition: all 1s ease-in-out;
+    -o-transition: all 1s ease-in-out;
+    -ms-transition: all 1s ease-in-out;
+    transition: all 1s ease-in-out;
     /* order: name, direction, duration, iteration-count, timing-function */
-    -moz-animation:blink normal 2s infinite ease-in-out; /* Firefox */
-    -webkit-animation:blink normal 2s infinite ease-in-out; /* Webkit */
-    -ms-animation:blink normal 2s infinite ease-in-out; /* IE */
-    animation:blink normal 2s infinite ease-in-out; /* Opera and prob css3 final iteration */
+    -moz-animation: blink normal 2s infinite ease-in-out;
+    /* Firefox */
+    -webkit-animation: blink normal 2s infinite ease-in-out;
+    /* Webkit */
+    -ms-animation: blink normal 2s infinite ease-in-out;
+    /* IE */
+    animation: blink normal 2s infinite ease-in-out;
+    /* Opera and prob css3 final iteration */
 }
 
-@-moz-keyframes blink {0%{opacity:1;} 50%{opacity:0;} 100%{opacity:1;}} /* Firefox */
-@-webkit-keyframes blink {0%{opacity:1;} 50%{opacity:0;} 100%{opacity:1;}} /* Webkit */
-@-ms-keyframes blink {0%{opacity:1;} 50%{opacity:0;} 100%{opacity:1;}} /* IE */
-@keyframes blink {0%{opacity:1;} 50%{opacity:0;} 100%{opacity:1;}} /* Opera and prob css3 final iteration */
+@-moz-keyframes blink {
+    0% {
+        opacity: 1;
+    }
+
+    50% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
+
+/* Firefox */
+@-webkit-keyframes blink {
+    0% {
+        opacity: 1;
+    }
+
+    50% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
+
+/* Webkit */
+@-ms-keyframes blink {
+    0% {
+        opacity: 1;
+    }
+
+    50% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
+
+/* IE */
+@keyframes blink {
+    0% {
+        opacity: 1;
+    }
+
+    50% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
+
+/* Opera and prob css3 final iteration */
 
 
-.widget-wrp{
+.widget-wrp {
     height: 100%;
 }
-.content{
+
+.content {
     width: 100%;
     height: 100%;
 }
 
-.btn-wrp{
+.btn-wrp {
     position: absolute;
     height: 100%;
     width: 100%;
@@ -77,28 +143,28 @@
     align-items: center;
     gap: 10px;
 
-    img{
+    img {
         vertical-align: middle;
         border-style: none;
     }
 
-    #text{
+    #text {
         text-align: center;
         white-space: pre-line;
         min-width: 230px;
         max-width: 230px;
 
-        
+
     }
 
-    .title{
+    .title {
         // margin-top: 16px;
         color: rgb(19, 33, 68);
         font-size: 16px;
         font-weight: 600;
     }
 
-    .description{
+    .description {
         // margin-top: 8px;
         // margin-bottom: 16px;
         color: #acbdcf;
@@ -119,6 +185,6 @@
     border-radius: 10px;
 }
 
-#cds-play-btn:hover { 
-    opacity: .8!important;
+#cds-play-btn:hover {
+    opacity: .8 !important;
 }
