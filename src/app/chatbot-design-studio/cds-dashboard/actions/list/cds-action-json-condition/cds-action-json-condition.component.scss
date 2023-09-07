@@ -38,6 +38,28 @@ cds-connector.connector-false{
     top: calc(50% - 10px);
 }
 
+cds-connector.connector-true ::ng-deep{
+
+    .point-connector-empty{
+        border: 2px solid $success-connector;
+        background: $success-connector;
+    }
+    .point-connector{
+        background: $success-connector;
+    }
+}
+
+cds-connector.connector-false ::ng-deep{
+
+    .point-connector-empty{
+        border: 2px solid $failure-connector;
+        background: $failure-connector;
+    }
+    .point-connector{
+        background: $failure-connector;
+    }
+}
+
 .content {
     //padding: 10px 30px;
     padding: 20px 0px;

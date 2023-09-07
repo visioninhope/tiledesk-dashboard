@@ -108,7 +108,6 @@ export class CdsActionOpenHoursComponent implements OnInit {
       if (form && (form.trueIntent !== ''))
         this.action = Object.assign(this.action, this.actionOpenHoursFormGroup.value);
     })
-    console.log('attributesssssss--->', this.action)
     this.trueIntentAttributes = this.action.trueIntentAttributes;
     this.falseIntentAttributes = this.action.falseIntentAttributes;
   }
@@ -144,12 +143,14 @@ export class CdsActionOpenHoursComponent implements OnInit {
     this.updateAndSaveAction.emit();
   }
 
-  onChangeAttributesTrue(attributes:any){
-    this.action.trueIntentAttributes = attributes;
-  }
-
-  onChangeAttributesFalse(attributes:any){
-    this.action.falseIntentAttributes = attributes;
+  onChangeAttributes(attributes:any, type: 'trueIntent' | 'falseIntent'){
+    if(type === 'trueIntent'){
+      this.action.trueIntentAttributes = attributes;
+    }
+    if(type === 'falseIntent'){
+      this.action.falseIntentAttributes = attributes;
+    }
+    this.updateAndSaveAction.emit();
   }
 
   /** */

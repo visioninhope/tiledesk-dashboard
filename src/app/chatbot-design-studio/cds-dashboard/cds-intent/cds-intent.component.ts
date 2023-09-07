@@ -123,7 +123,7 @@ export class CdsIntentComponent implements OnInit, OnDestroy, OnChanges {
             this.questionCount = 0
           }
           //UPDATE FORM
-          if (this.intent && this.intent.form !== undefined) {
+          if (this.intent && this.intent.form && (this.intent.form !== null)) {
             this.formSize = Object.keys(this.intent.form).length;
           } else {
             this.formSize = 0;
@@ -299,7 +299,7 @@ export class CdsIntentComponent implements OnInit, OnDestroy, OnChanges {
           // this.question = this.intent.question;
         }
       }
-      if (this.intent && this.intent.form !== undefined) {
+      if (this.intent && this.intent.form && (this.intent.form !== null)) {
         this.formSize = Object.keys(this.intent.form).length;
       } else {
         this.formSize = 0;
@@ -545,17 +545,17 @@ export class CdsIntentComponent implements OnInit, OnDestroy, OnChanges {
    * 3 - moving new action in intent from panel elements
    */
   async onDropAction(event: CdkDragDrop<string[]>) {
-
     console.log('[CDS-INTENT] onDropAction: ', event);
     // console.log('event:', event, 'previousContainer:', event.previousContainer, 'event.container:', event.container);
     if (event.previousContainer === event.container) {
       // moving action in the same intent
       console.log("[CDS-INTENT] onDropAction sto spostando una action all'interno dello stesso intent: ", event);
       moveItemInArray(event.container.data, event.previousIndex, event.currentIndex);
+      this.connectorService.movedConnector(this.intent.intent_id);
       console.log("[CDS-INTENT] onDropAction aggiorno l'intent");
       const response = await this.intentService.updateIntent(this.intent);
       if (response) {
-        this.connectorService.movedConnector(this.intent.intent_id);
+        // this.connectorService.movedConnector(this.intent.intent_id);
       }
     } else {
       try {
