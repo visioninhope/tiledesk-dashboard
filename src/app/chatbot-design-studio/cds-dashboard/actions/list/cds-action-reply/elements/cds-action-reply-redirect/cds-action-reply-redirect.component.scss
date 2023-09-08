@@ -150,7 +150,8 @@
         }
     }
     .control-button:hover{
-        color: $color-withe-hex;
+        // color: $color-withe-hex;
+        color: $color-blue-hex;
         &.delete{
             box-shadow: 0 2px 6px 0 rgb(255 255 255 / 15%);
             em {
@@ -217,7 +218,8 @@
 
 .control-label{
     font-family: 'Poppins','Roboto',Arial,sans-serif;
-    color: #e8eaed;
+    // color: #e8eaed;
+    color: $black-02;
     text-align: left;
     line-height: 20px;
     font-size: 14px;
@@ -258,10 +260,11 @@ mat-button-toggle ::ng-deep{
 }
 
 mat-button-toggle-group {
-    border: none;
+    // border: none; // nk
     margin-left: 30px;
 }
 mat-button-toggle.mat-button-toggle-checked{
-    background-color: $icon-color;
+    // background-color: $icon-color; // nk
+    background-color: $color-blue-hex;
     color: white;
 }

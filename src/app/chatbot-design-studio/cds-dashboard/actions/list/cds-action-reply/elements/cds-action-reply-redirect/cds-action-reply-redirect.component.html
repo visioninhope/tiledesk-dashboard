@@ -38,12 +38,14 @@
 
     <div class="text-editor">
         <div class="url-wrp">
-            <span class="control-label">{{ 'url' | translate }}:</span>
+            <!-- <span class="control-label">{{ 'url' | translate }}:</span> -->
+            <span class="control-label">URL:</span>
             <div class="response-wrp" *ngIf="metadata.src">{{metadata.src}}</div>
-            <div class="response-wrp no-text" *ngIf="!metadata.src">Click to add url ...</div>
+            <div class="response-wrp no-text" *ngIf="!metadata.src">Click to add URL ...</div>
         </div>
         <div class="url-wrp">
-            <span class="control-label">{{ 'Open in' | translate }}:</span>
+            <!-- <span class="control-label">{{ 'Open in' | translate }}:</span> -->
+            <span class="control-label">Open in:</span>
             <span class="control-label" *ngIf="metadata.target === 'parent'"><b>Same widget window</b></span>
             <span class="control-label"  *ngIf="metadata.target === 'blank'"><b>New Tab window</b></span>
         </div>
@@ -56,7 +58,8 @@
     <div class="text-editor">
 
         <div class="url-wrp">
-            <span class="control-label">{{ 'url' | translate }}:</span>
+            <!-- <span class="control-label">{{ 'url' | translate }}:</span> -->
+            <span class="control-label">URL:</span>
             <cds-textarea id="url"
                 class="text-editable-div"
                 [text]="metadata.src" 

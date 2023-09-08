@@ -192,7 +192,8 @@ $max-height: 230px;
         }
     }
     .control-button:hover{
-        color: $color-withe-hex;
+        // color: $color-withe-hex;
+        color: $color-blue-hex;
         &.delete{
             box-shadow: 0 2px 6px 0 rgb(255 255 255 / 15%);
             em {
@@ -216,7 +217,8 @@ $max-height: 230px;
 
 
 .response-frame-panel {
-    border: 2px dashed #eeeef1;
+    // border: 2px dashed #eeeef1;
+    border: 2px dashed $color-blue-hex;
     border-radius: 6px;
     display: flex;
     justify-content: center;

@@ -1,6 +1,6 @@
 @import "./src/assets/sass/cds/_variables.scss";
 
-:host{
+:host {
     --cardImageHeight: 150px;
     --cardWidth: 220px;
 }
@@ -17,6 +17,7 @@
     flex-wrap: wrap;
     row-gap: 5px;
     column-gap: 5px;
+
     .delay-wrapper,
     .filter-wrapper {
         display: block;
@@ -34,18 +35,20 @@
     }
 }
 
-.extensions-response:hover{
+.extensions-response:hover {
     .response-controls {
         opacity: 1;
     }
 }
 
-.previewMode{
+/* Preview Mode 
+/* ******************************** */
+.previewMode {
     display: flex;
     flex-direction: column;
     gap: $padding-base-preview;
 
-    &.extensions-response{
+    &.extensions-response {
         margin: 0;
         padding: 0 10px 0px 25px;
     }
@@ -61,7 +64,7 @@
         // box-shadow: #0000000f 0 0 0 1px;
     }
 
-    .gallery-preview-wrp{
+    .gallery-preview-wrp {
         display: flex;
         -webkit-box-align: center;
         align-items: center;
@@ -69,7 +72,7 @@
         width: 100%;
         gap: 10px;
 
-        .image{
+        .image {
             width: 40px;
             height: 40px;
             border-radius: 8px;
@@ -83,14 +86,14 @@
             }
         }
 
-        .content{
+        .content {
             display: flex;
             flex-direction: column;
             -webkit-box-align: center;
             align-items: flex-start;
             width: calc(100% - 50px);
 
-            .text{
+            .text {
                 white-space: nowrap;
                 text-overflow: ellipsis;
                 overflow: hidden;
@@ -99,32 +102,28 @@
                 width: 100%;
             }
 
-            .description{
+            .description {
                 font-size: 11px;
             }
         }
-
-        
-        
     }
 
-    .button-reply{
+    .button-reply {
         min-width: 200px;
         padding: 2px 10px;
     }
 
     .content-botton-reply {
-        position:relative;
+        position: relative;
         height: 26px;
     }
+
     //** CONNECTOR **//
     cds-connector.connector {
         position: absolute;
         top: calc(50% - 10px);
         right: -15px;
     }
-
-
     /** BUTTONS **/
     .buttons-response {
         // display: block;
@@ -149,7 +148,7 @@
         /* align-content: flex-end; */
         align-items: flex-end;
 
-        .button-reply-add{
+        .button-reply-add {
             color: $color-txt-2-hex;
             border-color: $color-txt-2-hex;
         }
@@ -162,6 +161,7 @@
         font-weight: 500;
         line-height: $button-height-base;
         transition: all .3s;
+
         &.custom-placeholder {
             margin: 10px 5px;
             background: #dfdfdf;
@@ -171,18 +171,20 @@
         }
     }
 
-    .button-controls{
+    .button-controls {
         top: -40%;
     }
-    
-    .gallery-divider{
+
+    .gallery-divider {
         height: 2px;
         margin: 8px 0px;
         background: #ebe2c6;
         display: flex;
     }
- 
+
 }
+/* ./ Preview Mode 
+/* ******************************** */
 
 /** response-controls **/
 .response-controls {
@@ -191,7 +193,8 @@
         color: $color-bck-gray-hex;
         transition: color .3s;
         height: 20px;
-        &.delete{
+
+        &.delete {
             height: 24px;
             width: 24px;
             background: $color-bck-gray-hex;
@@ -199,6 +202,7 @@
             display: flex;
             align-items: center;
             justify-content: center;
+
             em {
                 font-size: 1.15em;
                 color: $color-withe-hex;
@@ -206,10 +210,14 @@
             }
         }
     }
-    .control-button:hover{
-        color: $color-withe-hex;
-        &.delete{
+
+    .control-button:hover {
+        // color: $color-withe-hex;
+        color: $color-blue-hex;
+
+        &.delete {
             box-shadow: 0 2px 6px 0 rgb(255 255 255 / 15%);
+
             em {
                 color: $color-red-hex;
             }
@@ -235,10 +243,11 @@
     display: flex;
     overflow: scroll;
     gap: 10px;
-    margin: 0;
+    // margin: 0px;
+    margin-top: 10px; // nk
     width: 100%;
     font-size: $font-size-base;
-    padding: 0 25px;
+    padding: 0 32px;
 }
 
 .button-reply {
@@ -259,6 +268,8 @@
     line-height: $button-height-base;
     text-align: center;
     transition: all .3s;
+    border: 1px solid #8e98a8;
+
     &.custom-placeholder {
         margin: 10px 5px;
         background: #dfdfdf;
@@ -267,18 +278,21 @@
         transition: transform 250ms cubic-bezier(0, 0, 0.2, 1);
     }
 }
-.button-reply:hover{
+
+.button-reply:hover {
     .button-controls {
         opacity: 1;
+        top: 0px; // nk
     }
-    .action-button-controls{
+
+    .action-button-controls {
         opacity: 0;
     }
 }
 
 
 //BUTTONS
-.gallery-buttons{
+.gallery-buttons {
     -webkit-box-align: center;
     -ms-flex-align: center;
     -webkit-box-pack: center;
@@ -296,12 +310,13 @@
     transition: all .3s;
     width: 100%;
 
-    .single-button{
+    .single-button {
         -webkit-box-align: center;
         -ms-flex-align: center;
         align-items: center;
         justify-content: center;
-        border-top: 1px solid $icon-color;
+        // border-top: 1px solid $icon-color;
+        border-top: 1px solid $border-light; // nk
         cursor: pointer;
         display: -webkit-box;
         display: -ms-flexbox;
@@ -316,6 +331,7 @@
         padding: 2px 10px;
         font-size: 0.7em;
         font-weight: 500;
+       
 
         &:after {
             content: "";
@@ -325,14 +341,14 @@
             top: 50%;
             left: 50%;
             transform-style: flat;
-            transform: translate3d(-50%,-50%,0);
-            background: rgba(white,.2);
+            transform: translate3d(-50%, -50%, 0);
+            background: rgba(white, .2);
             border-radius: 100%;
             transition: width .5s ease, height .5s ease;
         }
 
-        &:hover{
-            .button-controls{
+        &:hover {
+            .button-controls {
                 opacity: 1;
             }
         }
@@ -343,7 +359,7 @@
 
 
 // ADD button - ADD card
-.gallery-buttons-add{
+.gallery-buttons-add {
     -webkit-box-align: center;
     -ms-flex-align: center;
     -webkit-box-orient: vertical;
@@ -357,26 +373,28 @@
     // margin-bottom: 5px;
     width: 100%;
 
-    &.last{
+    &.last {
         flex-direction: row;
 
-        .gallery-buttons-add-lines{
-            border-top: 1px dashed #b4c0c7;
-            border-bottom: 1px dashed #b4c0c7;
+        .gallery-buttons-add-lines {
+            // border-top: 1px dashed #b4c0c7;
+            // border-bottom: 1px dashed #b4c0c7;
+            border-top: 1px dashed $deep-brown;
+            border-bottom: 1px dashed $deep-brown;
             width: 28px;
             height: 0;
         }
     }
 
-    .gallery-buttons-add-lines{
-        border-left: 1px dashed #b4c0c7;
-        border-right: 1px dashed #b4c0c7;
+    .gallery-buttons-add-lines {
+        border-left: 1px dashed $deep-brown;
+        border-right: 1px dashed $deep-brown;
         height: 28px;
         width: 0;
     }
-    
 
-    .csd-add-button-btn-wpr{
+
+    .csd-add-button-btn-wpr {
         position: relative;
 
         .cds-add-action-btn {
@@ -385,10 +403,11 @@
             -webkit-box-pack: center;
             -ms-flex-pack: center;
             align-items: center;
-            background: #fff;
+            // background: #fff;
+            background: $deep-brown;
             border-radius: 100%;
-            -webkit-box-shadow: 0 1px 4px 0 rgba(0,0,0,.19);
-            box-shadow: 0 1px 4px 0 rgba(0,0,0,.19);
+            -webkit-box-shadow: 0 1px 4px 0 rgba(0, 0, 0, .19);
+            box-shadow: 0 1px 4px 0 rgba(0, 0, 0, .19);
             display: -webkit-box;
             display: -ms-flexbox;
             display: flex;
@@ -402,16 +421,18 @@
 
         }
 
-        .cds-add-action-btn > span {
+        .cds-add-action-btn>span {
             font-size: 20px;
-            color: $icon-color;
+            // color: $icon-color;
+            color: $color-withe-hex;
             top: 0;
         }
 
-        .cds-add-action-btn:hover{
-            background: $icon-color;
+        .cds-add-action-btn:hover {
+            // background: $icon-color;
+
             span {
-                color: white;
+                color: $color-blue-hex;
             }
         }
 
@@ -419,18 +440,21 @@
             position: absolute;
             top: 0;
             left: 30px;
-            color: $icon-color;
+            // color: $icon-color;
+            color: $black-02; // nk
             font-size: 14px;
             white-space: nowrap;
             // z-index: 1;
             cursor: pointer;
         }
+
         .action--text:hover {
-            color: rgba($icon-color, 0.8);
+            // color: rgba($icon-color, 0.8);
+            color: $color-blue-hex; //nk
         }
 
     }
- 
+
 }
 
 
@@ -449,7 +473,7 @@
     margin: 0;
     padding: 0;
     outline: none;
-    overflow: hidden!important;
+    overflow: hidden !important;
     text-overflow: ellipsis;
     white-space: nowrap;
 
@@ -462,7 +486,7 @@
 
 }
 
-.cards-scroll-spacer{
+.cards-scroll-spacer {
     -ms-flex-negative: 0;
     content: "";
     flex-shrink: 0;
@@ -471,15 +495,16 @@
 
 
 // --- PREVIEW SECTION ---
-.gallery-image{
+.gallery-image {
     height: 150px;
-    background: #fff;
+    // background: #fff;
+    background: $drop-zone-background;
     overflow: hidden;
     position: relative;
     width: 100%;
-    border-radius: $button-border-radius-base $button-border-radius-base 0px 0px;
-
-    .image-overlay{
+    // border-radius: $button-border-radius-base $button-border-radius-base 0px 0px;
+    border-radius: 14px 14px 0px 0px;
+    .image-overlay {
         // display: flex;
         align-items: center;
         justify-content: center;
@@ -488,10 +513,12 @@
         bottom: 0;
         right: 0;
         left: 0;
-        background-color: rgba(#b38d27, 0.5);
+        // background-color: rgba(#b38d27, 0.5);
+        background-color:$drop-zone-background;
 
-        &:hover{
-            opacity: 0.5;
+        &:hover {
+            // opacity: 0.5;
+
             .control-button {
                 &.delete {
                     // margin-right: -24px;
@@ -527,24 +554,28 @@
 }
 
 cds-image-upload ::ng-deep {
-    div.dropUploadImage{
+    div.dropUploadImage {
         min-height: unset !important;
     }
-    div.labelDropUploadImage{
+
+    div.labelDropUploadImage {
         font-size: 12px;
         line-height: 15px;
     }
-    div.image-wrp{
+
+    div.image-wrp {
         height: var(--cardImageHeight);
-        img{
+
+        img {
             height: 100% !important;
             width: 100% !important;
             -o-object-fit: cover;
             object-fit: cover;
         }
     }
-    
+
 }
+
 // --- PREVIEW SECTION: end ---
 
 
@@ -553,9 +584,11 @@ cds-image-upload ::ng-deep {
     user-select: none;
     box-sizing: border-box;
     outline: none;
-    border: 1px dashed $color-withe-hex;;
+    // border: 1px dashed $color-withe-hex;
+    border: 1px dashed $color-blue-hex;
     border-radius: $button-border-radius-base;
-    color: $color-withe-hex;
+    // color: $color-withe-hex;
+    color: $color-blue-hex;
     cursor: pointer;
     font-size: 0.7em;
     font-weight: 400;
@@ -580,9 +613,11 @@ cds-image-upload ::ng-deep {
     top: -5%;
     opacity: 0;
     transition: opacity 0.3s ease-in-out;
-    .buttonsToMove{
+
+    .buttonsToMove {
         display: inline-flex;
     }
+
     .control-button {
         cursor: pointer;
         background: $color-bck-gray-hex;
@@ -595,19 +630,23 @@ cds-image-upload ::ng-deep {
         align-items: center;
         justify-content: center;
         margin: 0 2px;
+
         em {
             font-size: 1.15em;
             color: $color-withe-hex;
             transition: color .3s;
         }
     }
-    .control-button:hover{
+
+    .control-button:hover {
         color: $color-withe-hex;
         box-shadow: 0 2px 6px 0 rgb(255 255 255 / 15%);
+
         em {
             color: $color-red-hex;
         }
-        &.delete{
+
+        &.delete {
             em {
                 color: $color-red-hex;
             }
@@ -618,7 +657,8 @@ cds-image-upload ::ng-deep {
 .action-button-controls {
     top: -12px;
     opacity: 0;
-    .control-button:not(.delete){
+
+    .control-button:not(.delete) {
         cursor: grab;
     }
 }
@@ -632,12 +672,13 @@ cds-image-upload ::ng-deep {
     //             0 8px 10px 1px rgba(0, 0, 0, 0.14),
     //             0 3px 14px 2px rgba(0, 0, 0, 0.12);
 
-    &.single-button{
+    &.single-button {
         -webkit-box-align: center;
         -ms-flex-align: center;
         align-items: center;
         justify-content: center;
-        border-top: 1px solid $icon-color;
+        // border-top: 1px solid $icon-color;
+        border-top: 1px solid $border-light; // nk
         cursor: pointer;
         display: -webkit-box;
         display: -ms-flexbox;
@@ -658,14 +699,14 @@ cds-image-upload ::ng-deep {
             top: 50%;
             left: 50%;
             transform-style: flat;
-            transform: translate3d(-50%,-50%,0);
-            background: rgba(white,.2);
+            transform: translate3d(-50%, -50%, 0);
+            background: rgba(white, .2);
             border-radius: 100%;
             transition: width .5s ease, height .5s ease;
         }
 
-        &:hover{
-            .button-controls{
+        &:hover {
+            .button-controls {
                 opacity: 1;
             }
         }
@@ -684,9 +725,9 @@ cds-image-upload ::ng-deep {
 .draggable-box:last-child {
     border: none;
 }
-  
+
 .draggable-list.cdk-drop-list-dragging .draggable-box:not(.cdk-drag-placeholder) {
-   transition: transform 250ms cubic-bezier(0, 0, 0.2, 1);
+    transition: transform 250ms cubic-bezier(0, 0, 0.2, 1);
 }
 
 //----DRAG_DROP: end ----
@@ -700,13 +741,29 @@ cds-textarea#description ::ng-deep {
     // .text-editor-wrapper{
     //     margin: 5px 0px;
     // }
-    .text-editor{
+    .text-editor {
         display: flex;
     }
 
+    // textarea {
+    //     line-height: 20px !important;
+    //     font-size: 0.9em !important;
+    //     // border: unset !important;
+    // }
+
     textarea {
+        border-bottom: 1px solid white !important;
+        border-top: 1px solid white !important;
+        border-radius: 0px;
+        resize: none !important;
+        // padding: 5px 20px !important;
+        padding: 5px 14px !important;
+        min-height: 25px !important;
         line-height: 20px !important;
         font-size: 0.9em !important;
+        width: 192px !important; // nk
+        border: unset!important; // nk
+
     }
 
     // mat-form-field{
@@ -717,38 +774,31 @@ cds-textarea#description ::ng-deep {
     mat-form-field:hover {
         .mat-form-field-wrapper {
             .mat-form-field-flex {
+
                 // padding: 0px;
                 .mat-form-field-infix {
                     textarea {
-                        border-bottom: 1px solid rgb(242 205 111)!important;
-                        border-top: 1px solid rgb(242 205 111)!important;
+                        // border-bottom: 1px solid rgb(242 205 111) !important; // nk
+                        // border-top: 1px solid rgb(242 205 111) !important; // nk
                         // outline: 0px solid rgb(242 205 111) !important;
                         transition: border 0.3s;
-                        
+
                     }
                 }
             }
         }
     }
 
-    textarea {
-        border-bottom: 1px solid white!important;
-        border-top: 1px solid white!important;
-        border-radius: 0px;
-        resize: none !important; 
-        padding: 5px 20px !important;
-        min-height: 25px !important;
-
-    }
+ 
 }
 
-cds-textarea#title ::ng-deep{
+cds-textarea#title ::ng-deep {
     textarea {
         font-weight: 600;
     }
 }
 
-cds-textarea#description.noButtons ::ng-deep{
+cds-textarea#description.noButtons ::ng-deep {
     textarea {
         border-radius: 0px 0px $button-border-radius-base $button-border-radius-base;
     }
@@ -757,38 +807,41 @@ cds-textarea#description.noButtons ::ng-deep{
 
 ::ng-deep .cdk-drag-preview {
 
-    #title{
+    #title {
         textarea {
             font-weight: 600;
         }
     }
 
     textarea {
-        border-bottom: 1px solid white!important;
-        border-top: 1px solid white!important;
+        border-bottom: 1px solid white !important;
+        border-top: 1px solid white !important;
         border-radius: 0px;
-        resize: none !important; 
+        resize: none !important;
         padding: 5px 20px !important;
         min-height: 25px !important;
     }
 
-    
+
 
     cds-image-upload {
-        div.dropUploadImage{
+        div.dropUploadImage {
             min-height: unset !important;
         }
-        div.image-wrp{
+
+        div.image-wrp {
             height: var(--cardImageHeight);
-            img{
+
+            img {
                 height: 100% !important;
                 width: 100% !important;
                 -o-object-fit: cover;
                 object-fit: cover;
             }
         }
-        
+
     }
 }
+
 /** TEXT AREA: end **/
 ////////////////////////////

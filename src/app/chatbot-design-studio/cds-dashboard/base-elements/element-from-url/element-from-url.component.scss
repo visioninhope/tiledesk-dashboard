@@ -43,7 +43,8 @@
     label.control-label {
         font-size: 14px;
         line-height: normal;
-        color: #aaa;
+        // color: #aaa;
+        color: $black-02;
         font-weight: 400;
         margin: 0;
     }
@@ -73,7 +74,8 @@
 
 .control-label{
     font-family: 'Poppins','Roboto',Arial,sans-serif;
-    color: #e8eaed;
+    // color: #e8eaed; // nk
+    color: $black-02;
     text-align: left;
     line-height: 20px;
     font-size: 14px;

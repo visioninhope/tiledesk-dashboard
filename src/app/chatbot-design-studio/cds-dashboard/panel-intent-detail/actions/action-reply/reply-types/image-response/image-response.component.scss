@@ -148,10 +148,6 @@
     cursor: grab;
 }
 
-
-
-
-
 .image-panel {
     position: absolute;
     left: 0;
@@ -178,10 +174,6 @@
     background-size: cover;
     background-position: center;
 }
-
-
-
-
 
 .response-image-uploader-overlay {
     background: #f0f4f7;
@@ -212,7 +204,8 @@
     margin-top: 10px;
     margin-bottom: 10px;
     padding: 0px;
-    background: rgba(255, 255, 255, 0.383);
+    // background: rgba(255, 255, 255, 0.383);
+    background: $drop-zone-background;
     overflow: visible;
     max-width: calc(100% - 60px);
     width: auto;
@@ -252,6 +245,7 @@
     width: 100%;
     font-size: $font-size-base;
     padding: 0 25px;
+    align-items: flex-end;
 }
 .custom-placeholder {
     background: #ccc;
@@ -306,7 +300,8 @@
     user-select: none;
     box-sizing: border-box;
     outline: none;
-    border: 1px dashed $color-txt-2-hex;
+    // border: 1px dashed $color-txt-2-hex;
+    border: 1px dashed $color-blue-hex;
     border-radius: $button-border-radius-base;
     color: $color-withe-hex;
     cursor: pointer;

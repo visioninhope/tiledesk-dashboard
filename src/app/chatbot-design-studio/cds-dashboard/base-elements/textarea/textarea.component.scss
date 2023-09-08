@@ -63,7 +63,8 @@ mat-form-field.box-textarea ::ng-deep {
     textarea {
         border-radius: 8px;
         background: $color-withe-hex;
-        border: 1px solid $color-withe-hex;
+        // border: 1px solid $color-withe-hex;
+        border: 1px solid $border-light;
         overflow-x: hidden;
         overflow-y: auto;
         // width: calc(100% - 2.5em);

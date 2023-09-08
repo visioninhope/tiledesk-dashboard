@@ -98,6 +98,7 @@
                             cdkDropList (cdkDropListDropped)="dropButton($event, i)">
                             <div *ngFor="let button of galleryEl.buttons; let j= index; let firstBtn = first; let lastBtn = last" 
                                 class="single-button action"
+                                [ngClass]="{ firstBtn: firstBtn, lastBtn: lastBtn }"
                                 (click)="onOpenButtonPanel(i, j, button)" cdkDrag>
                                     {{button.value}}
                                 <div class="button-controls action-button-controls">

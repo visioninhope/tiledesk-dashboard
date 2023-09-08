@@ -12,6 +12,7 @@
     flex-wrap: wrap;
     row-gap: 5px;
     column-gap: 5px;
+
     .delay-wrapper,
     .filter-wrapper {
         display: block;
@@ -30,49 +31,52 @@
     }
 }
 
-.extensions-response:hover{
+.extensions-response:hover {
     .response-controls {
         opacity: 1;
     }
 }
 
-.previewMode{
-    &.extensions-response{
+/* Preview Mode 
+/* ****************************** */
+.previewMode {
+    &.extensions-response {
         margin: 0;
         padding: 0 10px 0px 25px;
     }
 
-    &.image-editor-wrapper{
+    &.image-editor-wrapper {
         // padding: 0;
         margin: 0px;
-        cds-textarea.text-editable-div{
+
+        cds-textarea.text-editable-div {
             width: calc(100% - 20px);
             margin: 5px auto;
         }
 
-        .response-image-uploader-wrapper{
+        .response-image-uploader-wrapper {
             margin: 5px auto;
             max-width: calc(100% - 20px);
 
-            img{
+            img {
                 width: 100%;
                 border-radius: 8px;
             }
 
 
-            &.no-image{
+            &.no-image {
                 display: flex;
                 gap: 10px;
                 align-items: center;
                 background: none;
 
-                .image{
+                .image {
                     width: 40px;
                     height: 40px;
                     border-radius: 8px;
                     box-shadow: rgba(0, 0, 0, 0.12) 0px -1px 0px 0px inset;
                     display: flex;
-        
+
                     img {
                         max-height: 100%;
                         max-width: 100%;
@@ -80,7 +84,7 @@
                     }
                 }
 
-                .text{
+                .text {
                     overflow-x: clip;
                     white-space: nowrap;
                     text-overflow: ellipsis;
@@ -90,7 +94,7 @@
             }
         }
 
-        .response-wrp{
+        .response-wrp {
             border-radius: 8px;
             background: #ffffff;
             border: 1px solid #ffffff;
@@ -101,37 +105,38 @@
             line-height: 25px;
             width: calc(100% - 20px);
             padding: 8px 10px;
-    
+
             line-height: 20px;
             font-size: .8em;
             margin: auto;
-    
-            &.no-text{
+
+            &.no-text {
                 color: rgb(141, 162, 181)
             }
         }
-
-
     }
 
-    &.buttons-response{
+    &.buttons-response {
         padding: 5px 0px 2px 0px;
         margin: 0;
         flex-direction: column;
         flex-wrap: nowrap;
-        .button-reply-add{
+        align-items: flex-end;
+
+        .button-reply-add {
             color: $color-txt-2-hex;
             border-color: $color-txt-2-hex;
             margin-right: 10px;
         }
     }
 
-    .button-reply{
+    .button-reply {
         min-width: 200px;
         padding: 2px 10px;
     }
 }
-
+/* ./ Preview Mode 
+/* ****************************** */
 
 .image-editor-wrapper {
     font-size: $font-size-base;
@@ -157,7 +162,8 @@
         color: $color-bck-gray-hex;
         transition: color .3s;
         height: 20px;
-        &.delete{
+
+        &.delete {
             height: 24px;
             width: 24px;
             background: $color-bck-gray-hex;
@@ -165,6 +171,7 @@
             display: flex;
             align-items: center;
             justify-content: center;
+
             em {
                 font-size: 1.15em;
                 color: $color-withe-hex;
@@ -172,10 +179,13 @@
             }
         }
     }
-    .control-button:hover{
+
+    .control-button:hover {
         color: $color-withe-hex;
-        &.delete{
+
+        &.delete {
             box-shadow: 0 2px 6px 0 rgb(255 255 255 / 15%);
+
             em {
                 color: $color-red-hex;
             }
@@ -198,6 +208,7 @@
     position: relative;
     margin: -20px 50px 0px 0px;
     float: right;
+
     .num-chars {
         background: $color-light-gray-hex;
         padding: 0px 8px;
@@ -205,13 +216,16 @@
         font-size: 0.8em;
         color: $color-text-box-hex;
         float: right;
+
         &.error {
             background: $color-orange-hex;
         }
     }
+
     .text-editor-insert-attribute {
         float: right;
     }
+
     .moji-picker {
         float: right;
     }
@@ -228,15 +242,18 @@
     border-radius: 8px;
     margin: 0px;
     padding: 0;
-    &:hover{
+
+    &:hover {
         background-color: #006cffc9;
         transition: background-color 0.3s ease-in;
+
         .image-response {
             display: inline-block;
         }
     }
 }
-.bck-image{
+
+.bck-image {
     background-color: #006cffc9;
     width: 100%;
     height: 100%;
@@ -244,10 +261,6 @@
     background-size: cover;
     background-position: center;
 }
-
-
-
-
 
 .response-image-uploader-overlay {
     background: #f0f4f7;
@@ -261,6 +274,7 @@
     right: 0;
     top: 0;
 }
+
 .response-image-uploader label input {
     display: none;
 }
@@ -271,21 +285,24 @@
 .response-image-uploader-wrapper {
     position: relative;
     display: block;
-    border-radius: 8px; 
+    border-radius: 8px;
     margin-left: 30px;
     // margin-top: 10px;
     margin-bottom: 10px;
     padding: 0px;
-    background: rgba(255, 255, 255, 0.383);
+    // background: rgba(255, 255, 255, 0.383);
+    background: $drop-zone-background;
     overflow: visible;
     max-width: calc(100% - 60px);
     width: auto;
     height: auto;
+
     .image-upload {
         border-radius: 6px;
         display: block;
         overflow: hidden;
     }
+
     .control-button {
         &.delete {
             color: $color-withe-hex;
@@ -298,7 +315,8 @@
             transition: all .3s ease-in-out;
         }
     }
-    &:hover{
+
+    &:hover {
         .control-button {
             &.delete {
                 margin-right: -24px;
@@ -310,7 +328,7 @@
 
 
 .content-botton-reply {
-    position:relative;
+    position: relative;
     height: 26px;
 }
 
@@ -335,15 +353,17 @@ cds-connector.connector {
     gap: 6px;
     width: 100%;
     font-size: 14px;
-    padding: 0 25px;
+    padding: 0 30px;
     flex-direction: row;
     float: right;
     justify-content: flex-start;
     /* align-content: flex-end; */
     flex-wrap: wrap;
-    align-items: flex-end;
+    // align-items: flex-end;
+    align-items: baseline;
 
 }
+
 .button-reply {
     // float: right;
     display: flex;
@@ -364,6 +384,7 @@ cds-connector.connector {
     font-weight: 500;
     line-height: $button-height-base;
     transition: all .3s;
+
     &.custom-placeholder {
         margin: 10px 5px;
         background: #dfdfdf;
@@ -372,11 +393,13 @@ cds-connector.connector {
         transition: transform 250ms cubic-bezier(0, 0, 0.2, 1);
     }
 }
+
 .button-reply:hover {
     .button-controls {
         opacity: 1;
     }
 }
+
 .button-reply-text {
     width: 100%;
     height: 100%;
@@ -392,18 +415,21 @@ cds-connector.connector {
     margin: 0;
     padding: 0;
     outline: none;
-    overflow: hidden!important;
+    overflow: hidden !important;
     text-overflow: ellipsis;
     white-space: nowrap;
 }
+
 .button-reply-add {
     float: right;
     user-select: none;
     box-sizing: border-box;
     outline: none;
-    border: 1px dashed $color-withe-hex;
+    // border: 1px dashed $color-withe-hex;
+    border: 1px dashed $color-blue-hex;
     border-radius: $button-border-radius-base;
-    color: $color-withe-hex;
+    // color: $color-withe-hex;
+    color: $color-blue-hex;
     cursor: pointer;
     font-size: 0.7em;
     font-weight: 400;
@@ -417,6 +443,7 @@ cds-connector.connector {
     width: fit-content;
     margin-right: 10px;
 }
+
 .button-controls {
     justify-content: space-between;
     display: inline-flex;
@@ -427,9 +454,11 @@ cds-connector.connector {
     top: -40%;
     opacity: 0;
     transition: opacity 0.3s ease-in-out;
-    .buttonsToMove{
+
+    .buttonsToMove {
         display: inline-flex;
     }
+
     .control-button {
         cursor: pointer;
         background: $color-bck-gray-hex;
@@ -442,19 +471,23 @@ cds-connector.connector {
         align-items: center;
         justify-content: center;
         margin: 0 2px;
+
         em {
             font-size: 1.15em;
             color: $color-withe-hex;
             transition: color .3s;
         }
     }
-    .control-button:hover{
+
+    .control-button:hover {
         color: $color-withe-hex;
         box-shadow: 0 2px 6px 0 rgb(255 255 255 / 15%);
+
         em {
             color: $color-red-hex;
         }
-        &.delete{
+
+        &.delete {
             em {
                 color: $color-red-hex;
             }
@@ -463,13 +496,14 @@ cds-connector.connector {
 }
 
 /** box-textarea **/
-cds-textarea.text-editable-div ::ng-deep{
+cds-textarea.text-editable-div ::ng-deep {
     display: block;
     margin-left: 30px;
     width: calc(100% - 66px);
+
     // margin-left: 20px;
     textarea {
-        line-height: 20px !important; 
+        line-height: 20px !important;
         width: calc(100% - 20px) !important;
         font-size: 0.9em !important;
     }
