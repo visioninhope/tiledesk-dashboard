@@ -34,7 +34,7 @@ $color-text-box: #566787;
         position: absolute;
         top: 50%;
         transform: translateY(-50%);
-        color: #cfe6fa;
+        color: $black-02; // nk
 
         .tpl-modal-header-text {
             margin-bottom: 20px;
@@ -50,7 +50,8 @@ $color-text-box: #566787;
                 display: flex;
                 justify-content: center;
                 align-items: center;
-                color: #cfe6fa;
+                // color: #cfe6fa; // nk
+                color: $color-blue-hex;
             }
         }
         
@@ -70,7 +71,7 @@ $color-text-box: #566787;
         }
     }
     .header-buttons--form {
-        background: #425575;
+        // background: #425575;
         align-items: center;
         justify-content: space-between;
         display: flex;
@@ -150,35 +151,45 @@ $color-text-box: #566787;
     }
 
     button#delete-form-btn{
-        background-color: transparent;
-        color: #fff;
+        // background-color: transparent;
+        background-color: $icon-bckgrnd-color; // nk
+        // color: #fff;
+        color: $black-02; // nk
         box-shadow: none;
         &:hover{
             background-color: red;
+            color: #fff;
         }
     }
 
     button#open-setting-btn{
-        background-color: transparent;
-        color: #fff;
+        // background-color: transparent;
+        background-color: $icon-bckgrnd-color; // nk
+        // color: #fff;
+        color: $black-02; // nk 
         box-shadow: none;
         &:hover{
             background-color: rgba(138,180,248,.8);
+            color: #fff;      
         }
     }
     button#close-general-btn{
-        background-color: transparent;
-        color: #fff;
+        // background-color: transparent;
+        background-color: $icon-bckgrnd-color; // nk
+        // color: rgb(127,127,127);
+        color: $black-02; // nk
         box-shadow: none;
         &:hover{
-            background-color: rgba(124, 125, 127, 0.8);
+            // background-color: rgba(127,127,127, 0.5); 
+            background-color: red; // nk
+            color: #fff; // nk
         }
     }
 
     .box--setting-form {
         margin-top: 0px;
         font-family: "Poppins", "Roboto", Arial, sans-serif;
-        color: #e8eaed;
+        color: $black-02; // nk
         text-align: left;
         padding: 6px 12px;
         font-weight: 400;
@@ -193,8 +204,9 @@ $color-text-box: #566787;
                 display: block;
                 width: 100%;
                 margin: 0px;
-                background: #1e293b;
-                border: none;
+                // background: #1e293b; // nk
+                // border: none;// nk  
+                border: 1px solid $border-light; // nk
                 padding: 5px;
                 border-radius: 4px;
             }
@@ -205,8 +217,9 @@ $color-text-box: #566787;
                 display: block;
                 width: 100%;
                 margin: 0px;
-                background: #1e293b;
-                border: none;
+                // background: #1e293b; // nk
+                // border: none; // nk
+                border: 1px solid $border-light; // nk
                 padding: 5px;
                 border-radius: 4px;
             }
@@ -219,9 +232,10 @@ $color-text-box: #566787;
     }
 
     .selectFormModel {
-        margin: 10px;
+        margin: 0px 10px;
         p {
-            color: #f1f3f4;
+            // color: #f1f3f4;
+            color: #7695a5;
             font-size: 12px;
             font-weight: 400;
             padding: 5px;
@@ -264,10 +278,10 @@ $color-text-box: #566787;
     // text-align: left;
     // padding: 0px 23px;
     position: relative;
-    background-color: #425575;
+    // background-color: #425575;
     z-index: 2;
     margin: auto 0;
-    border-top: 2px solid rgb(66,85,117);
+    border-top: 1px solid $border-light;
     width: 100%;
     text-align: center;
     padding: 0 23px;
@@ -287,23 +301,23 @@ $color-text-box: #566787;
 
 .btn-only-string {
     background: transparent !important;
-    color: #fff !important;
+    // color: #fff !important; // nk
+    color: $color-blue-hex !important; // nk
     border: unset !important;
     box-shadow: unset !important;
-    // background-color: #dce9ff !important;
-    // border-color: #dce9ff !important;
     padding-left: 0px !important;
     padding-right: 0px !important;
 }
 .btn-only-string:hover {
-    // color: rgba(138, 180, 248, .8) !important;
-    color: #8ab4f8cc!important;
-    // background-color: #9ac1ff  !important;
-    // border-color: #9ac1ff  !important;
+ 
+    // color: #8ab4f8cc!important; // nk
+    color: $color-blue-rgba !important; // nk
+   
 }
 
 #create-intent-form {
-    background: $light-blue !important;
+    // background: $light-blue !important;
+    background: $color-blue-hex !important; // nk
     color: $light-black !important;
     box-shadow: none !important;
     font-weight: 500 !important;
@@ -312,7 +326,8 @@ $color-text-box: #566787;
     font-size: 14px !important;
 }
 #create-intent-form:hover {
-    background: rgba(138, 180, 248, 0.8) !important;
+    // background: rgba(138, 180, 248, 0.8) !important;
+    background: $color-blue-rgba !important; // nk
 }
 
 // #open-setting-btn {
@@ -331,7 +346,8 @@ $color-text-box: #566787;
 // }
  
 #add-form-btn {
-    background: $light-blue !important;
+    // background: $light-blue !important;
+    background: $color-blue-hex !important; // nk
     box-shadow: none !important;
     color: #202124;
     font-weight: 500;
@@ -339,7 +355,8 @@ $color-text-box: #566787;
 }
 
 #add-form-btn:hover {
-    background: rgba(138, 180, 248, 0.8) !important;
+    // background: rgba(138, 180, 248, 0.8) !important;
+    background: $color-blue-rgba !important;
 }
 
 #add-form-btn > span { 

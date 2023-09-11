@@ -28,7 +28,8 @@ $color-text-box: #566787;
         font-size: 13px;
         white-space: normal;
         word-wrap: break-word;
-        color: #e8eaed;
+        // color: #e8eaed;
+        color: $black-02;
     }
     .td-order {
         margin: 0px;
@@ -63,7 +64,8 @@ $color-text-box: #566787;
     }
     .ff--column-th-span {
         font-weight: 300;
-        color: #e8eaed;
+        // color: #e8eaed;
+        color: $black-02;
     }
 }
 
@@ -102,7 +104,8 @@ $color-text-box: #566787;
         font-size: 13px;
         white-space: normal;
         word-wrap: break-word;
-        color: #e8eaed;
+        // color: #e8eaed; // nk
+        color: $black-02;
     }
 
     td {

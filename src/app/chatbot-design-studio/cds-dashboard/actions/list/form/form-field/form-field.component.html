@@ -22,7 +22,7 @@
               </tr>
             </thead>
 
-            <tbody cdkDropList (cdkDropListDropped)="drop($event)" style="display:block">
+            <tbody cdkDropList (cdkDropListDropped)="drop($event)">
                 
                 <tr *ngFor="let field of fields; let i = index;" 
                 [ngClass]="{'selected':selectedObjectId === i}" 

@@ -1,7 +1,8 @@
 @import "./src/assets/sass/cds/_variables.scss";
 
 .tilebot-add-edit-form {
-    background: #425575;
+    // background: #425575; // nk
+    background: $gray-05;
     height: auto;
     max-height: 0;
     overflow: hidden;
@@ -20,7 +21,7 @@
         border-radius: 20px;
         padding-right: 20px;
         padding-top: 10px;
-        color: #fff;
+        color: $color-blue-hex;
         min-height: 30px;
         background-color: transparent;
         box-shadow: none;
@@ -43,8 +44,9 @@
 
     .mat-expansion-panel {
         box-shadow: none;
-        background: #51627e;
-        border: 0px solid #5f6368;
+        // background: #51627e; // nk
+        // border: 0px solid #5f6368; // nk 
+        border: 1px solid $border-light;
         overflow: visible;
     }
     .mat-expansion-panel-header {
@@ -54,24 +56,27 @@
         font-size: 16px;
         margin: 0;
         font-weight: 400;
-        color: #e8eaed;
+        // color: #e8eaed;
+        color: $black-02; // nk
     }
 
     ::ng-deep .mat-expansion-indicator:after {
-        color: #f2f2f2;
+        // color: #f2f2f2; 
+        color: $black-02; // nk
         margin-top: -4px;
     }
     mat-expansion-panel {
         box-shadow: none;
-        background: rgb(48 63 92);
+        // background: rgb(48 63 92);
         border: 1px solid #5f6368;
+        border: 1px solid $border-light;
         overflow: visible;
         &.open-block {
             pointer-events: none;
         }
-        mat-expansion-panel-header {
-            height: 40px;
-        }
+        // mat-expansion-panel-header {
+        //     height: 40px;
+        // }
         &.mat-expanded {
             ::ng-deep .mat-expansion-panel-body {
                 opacity: 1;
@@ -226,7 +231,8 @@ input.form-control {
     font-size: 13px;
     white-space: normal;
     word-wrap: break-word;
-    color: #e8eaed;
+    // color: #e8eaed; // nk
+    color: $black-02;
 }
 // .form-group.is-empty label.control-label {
 //     z-index: 1;
@@ -303,7 +309,7 @@ input.form-control {
     //     }
     // }
     textarea {
-        border: 1px solid rgb(118, 118, 118) !important;
+        // border: 1px solid rgb(118, 118, 118) !important; // nk
         resize: none !important; 
         padding: 8px 20px !important;
         height: 25px !important;

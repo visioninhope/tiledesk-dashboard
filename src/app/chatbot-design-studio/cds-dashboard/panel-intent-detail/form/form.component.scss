@@ -34,7 +34,8 @@ $color-text-box: #566787;
         position: absolute;
         top: 50%;
         transform: translateY(-50%);
-        color: #cfe6fa;
+        // color: #cfe6fa;
+        color: $black-02;
 
         .tpl-modal-header-text {
             margin-bottom: 20px;
@@ -50,7 +51,8 @@ $color-text-box: #566787;
                 display: flex;
                 justify-content: center;
                 align-items: center;
-                color: #cfe6fa;
+                // color: #cfe6fa;
+                color: $color-blue-hex;
             }
         }
         
@@ -65,7 +67,7 @@ $color-text-box: #566787;
         em.material-icons {
             vertical-align: middle;
             display: inline-flex;
-            color: #3ea9f5;
+            color: $color-blue-hex;
             margin-right: 3px;
         }
     }
@@ -287,7 +289,8 @@ $color-text-box: #566787;
 
 .btn-only-string {
     background: transparent !important;
-    color: #fff !important;
+    // color: #fff !important; // nk
+    color: $color-blue-hex !important; // nk 
     border: unset !important;
     box-shadow: unset !important;
     // background-color: #dce9ff !important;
@@ -331,7 +334,7 @@ $color-text-box: #566787;
 // }
  
 #add-form-btn {
-    background: $light-blue !important;
+    background: $color-blue-hex !important;
     box-shadow: none !important;
     color: #202124;
     font-weight: 500;
@@ -339,7 +342,8 @@ $color-text-box: #566787;
 }
 
 #add-form-btn:hover {
-    background: rgba(138, 180, 248, 0.8) !important;
+    // background: rgba(138, 180, 248, 0.8) !important;
+    background: $color-blue-rgba
 }
 
 #add-form-btn > span { 
