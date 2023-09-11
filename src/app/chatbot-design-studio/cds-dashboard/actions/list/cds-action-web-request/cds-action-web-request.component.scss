@@ -112,18 +112,24 @@
         width: 80px;
         padding: 8px;
         justify-content: center;
-        background: $action-item-background;
-        color: $action-item-color;
+        // background: $action-item-background; // nk
+        // color: $action-item-color; // nk
+        color: $color-blue-hex;
         border-radius: 6px;
         height: 40px;
         font-size: 0.8em;
-        border: 1px solid #0F172A;
+        // border: 1px solid #0F172A; // nk
+        border: 1px solid $color-blue-hex;
         font-weight: 400;
         &:hover {
-            outline: 2px solid rgba(236,182,6,.6901960784)!important;
+            // outline: 2px solid rgba(236,182,6,.6901960784)!important; // nk
+            background: $color-blue-hex;
+            color: $color-txt-4-hex
         }
         &.cds-action-active {
-            outline: 2px solid rgba(236,182,6,.6901960784)!important;
+            // outline: 2px solid rgba(236,182,6,.6901960784)!important; // nk
+            background: $color-blue-hex;
+            color: $color-txt-4-hex
         }
     }
 }
@@ -189,6 +195,21 @@
     display: block;
     width: 100%;
     // margin: 6px 15px;
+    ::ng-deep mat-expansion-panel {
+        background: #f5f5f5 !important;
+    }
+    ::ng-deep .header__center {
+        color: $black-02!important;
+    }
+
+    ::ng-deep .key-value-form-column {
+       color: $black-02!important;
+    }
+    // ::ng-deep cds-textarea#assignTo {
+    //     background: #fff !important;
+    //     // border: 1px solid $border-light !important;
+    // }
+
 }
 
 
@@ -224,20 +245,47 @@ cds-select#method ::ng-deep{
 cds-textarea#url ::ng-deep {
     display: flex;
     padding: 8px 0px 0px 0;
+
+    mat-form-field {
+        margin-top: -2px;
+    }
     textarea {
-        border: 1px solid rgb(118, 118, 118) !important;
+        // border: 1px solid #ccc !important;
         border-radius: 0px 8px 8px 0px;
         resize: none !important; 
         padding: 6px 16px !important;
-
-        height: 23px !important;
-        min-height: 23px !important;
+        height: 22px !important;
+        min-height: 22px !important;
+        border-left: unset;
     }
 }
 
 div.value-wrp {
     min-height: 50px;
 }
+
+.cds-format-json-btn {
+    background: $color-blue-hex;
+    color: $color-txt-4-hex;
+    box-shadow: none;
+    font-weight: 400;
+    font-family: Poppins,Roboto,Arial,sans-serif;
+    text-transform: capitalize;
+    font-size: .8em;
+    padding: 9.9px 11px !important;
+    border-radius: 6px;
+    height: 40px;
+    margin-top: 0px !important;
+}
+
+.cds-format-json-btn:hover { 
+    background: $color-blue-rgba;
+}
+
+.cds-assign-to-label {
+   color: $black-02;
+}
+
 /*
 div.value-wrp {
     position: relative;

@@ -50,7 +50,11 @@
             <span [ngClass]="{'cds-action-active': methodSelectedBody}">Body</span>
         </div>
         <div  *ngIf="methodSelectedBody" class="cds-rigth">
-            <button id="cds-community-btn" type="button" class="btn btn-primary pull-right cds-blue-button" (click)="onJsonFormatter()">format JSON </button>
+            <!-- <button id="cds-community-btn" type="button" class="btn btn-primary pull-right cds-blue-button" (click)="onJsonFormatter()">format JSON </button> -->
+            <button id="cds-format-json" type="button" class="btn btn-primary pull-right cds-format-json-btn" 
+                (click)="onJsonFormatter()">
+                Format JSON 
+            </button>
         </div>
     </div>
     
@@ -87,7 +91,7 @@
 
     <div class="text-editor-wrapper">
         <div class="field-box">
-            <label class="title-label">Assign to:</label>
+            <label class="title-label cds-assign-to-label">Assign to:</label>
             <cds-attributes
                 class="cds-attributes"
                 [attributes]="assignments"

@@ -208,8 +208,10 @@ mat-form-field.box-textarea ::ng-deep {
         height: fit-content;
         padding: 2px;
         max-width: calc(100% - 25px);
-        background-color: #ecb606;
-        color: #fff;
+        // background-color: #ecb606; // nk
+        background-color: $color-blue-hex;
+        // color: #fff;
+        color: $black-02;
         .close{
             position: absolute;
             display: flex;
@@ -220,8 +222,10 @@ mat-form-field.box-textarea ::ng-deep {
             font-size: 13px;
             border-radius: 50%;
             background: #fff;
-            border: 1px solid #ecb606;
-            color: #ecb606;
+            // border: 1px solid #ecb606; // nk
+            border: 1px solid $color-blue-hex;
+            // color: #ecb606; // nk
+            color: $color-blue-hex;
             cursor: pointer;
             opacity: 1;
             justify-content: center;
@@ -229,7 +233,8 @@ mat-form-field.box-textarea ::ng-deep {
             padding: 0;
             margin: 0;
             &:hover{
-                background: #ecb606;
+                // background: #ecb606;
+                background: $color-blue-hex;
                 color: white;
             }
         }
