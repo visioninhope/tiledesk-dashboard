@@ -136,7 +136,8 @@ emoji-mart {
 }
 .action-delay-preview .delay--icon {
     padding-right: 4px;
-    color: #ecb606b0;
+    // color: #ecb606b0; // nk
+    color: $color-blue-hex;
 }
 
 .action-delay-preview .delay--time {

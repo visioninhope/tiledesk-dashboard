@@ -30,6 +30,9 @@
     margin-bottom: 0px;
     // margin-left: 30px;
 }
+.delay-time-label {
+    color: $black-02 !important;
+}
 
 .action-wait-content{
     margin-top: 30px;
@@ -68,13 +71,16 @@
 
 .action-wait-slider ::ng-deep{
     .mat-accent .mat-slider-track-fill {
-        background-color: $icon-color !important;
+        // background-color: $icon-color !important;
+        background-color: $color-blue-hex !important;
     }
     .mat-slider-thumb-label {
-        background-color: $icon-color !important;
+        // background-color: $icon-color !important;
+        background-color: $color-blue-hex !important;
 
     }
     .mat-slider-thumb {
-        background-color: $icon-color !important;
+        // background-color: $icon-color !important;
+        background-color: $color-blue-hex !important;
     }
 }
