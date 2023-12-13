@@ -1133,7 +1133,7 @@ export class AuthService {
     }
 
     localStorage.removeItem('user')
-    localStorage.removeItem('project')
+    localStorage.removeItem('last_project')
     localStorage.removeItem('role')
 
     // if (calledby !== 'autologin') {

@@ -1726,3 +1726,229 @@ appdashboard-app-store > div > div > div > div > .card-app-store {
   color: $plan-c-color;
   background: $plan-c-background;
 }
+
+/* -----------------------------------------
+/* New buttons > Btn Priamary
+/* ----------------------------------------- */
+.btn--primary {
+  background-color: #0566ff;
+  border-color: #0566ff;
+  color: #fff;
+  text-transform: none;
+  border-radius: 999px;
+  box-shadow: unset;
+  font-family: "Poppins","Roboto", "Arial", sans-serif;
+}
+
+.btn--primary:hover {
+  background-color: #0049bd;
+  border-color: #0049bd;
+  color: #fff;
+  box-shadow: unset;
+}
+
+.btn--primary:focus {
+  background-color: #0049bd;
+  border-color: #0049bd;
+  color: #fff;
+  box-shadow: unset;
+}
+
+.btn--primary:active {
+  background-color: #0049bd;
+  border-color: #0049bd;
+}
+
+.btn--ripple-primary {
+  background-position: center;
+  transition: background 0.3s;
+}
+.btn--ripple-primary:hover {
+  background: #0049bd radial-gradient(circle, transparent 1%, #0566ff 1%) center/15000%;
+}
+.btn--ripple-primary:active {
+  background-color: #0049bd;
+  background-size: 100%;
+  transition: background 0s;
+}
+
+/* -----------------------------------------
+/* New buttons > Btn Primary no background
+/* ---------------------------------------- */
+.btn.btn--primary-no-bkgnd {
+  border:1px solid #0566ff;
+  color: #0566ff;
+  background-color: #fff;
+  border-radius: 999px;
+  box-shadow: unset;
+  font-family: "Poppins","Roboto", "Arial", sans-serif;
+  text-transform: unset;
+}
+
+.btn.btn--primary-no-bkgnd:hover {
+  background-color: rgba(5, 102, 255, .2);
+  border: 1px solid #0049bd;
+  color: #0566ff;
+  box-shadow: unset;
+}
+
+.btn.btn--primary-no-bkgnd:focus {
+  background-color: rgba(5, 102, 255, .2);
+  border: 1px solid #0049bd;
+  color: #0566ff;
+  box-shadow: unset;
+}
+
+.btn.btn--primary-no-bkgnd:active {
+  background-color: rgba(5, 102, 255, .2);
+  border: 1px solid #0049bd;
+  color: #0566ff;
+  box-shadow: unset;
+}
+
+.btn.btn--ripple-primary-no-bkgnd {
+  background-position: center;
+  transition: background 0.3s;
+}
+.btn.btn.btn--ripple-primary-no-bkgnd:hover {
+  background: rgba(5, 102, 255, 1) radial-gradient(circle, transparent 1%, rgba(5, 102, 255, .2) 1%) center/15000%;
+}
+
+.btn.btn--ripple-primary-no-bkgnd:active {
+  background-color: #0049bd;
+  background-size: 100%;
+  transition: background 0s;
+}
+
+/* -----------------------------------------
+/* New buttons > Btn blu
+/* ----------------------------------------- */
+
+.btn.btn--blu {
+  background-color: rgb(91, 114, 167);
+  border-color: rgb(91, 114, 167);
+  color: #fff;
+  text-transform: none;
+  border-radius: 999px;
+  box-shadow: unset;
+  font-family: "Poppins","Roboto", "Arial", sans-serif;
+}
+
+.btn.btn--blu:hover {
+  background-color: #7c8eb9;
+  border-color: #7c8eb9;
+  color: #fff;
+  box-shadow: unset;
+}
+
+.btn.btn--blu:focus {
+  background-color: #7c8eb9;
+  border-color: #7c8eb9;
+  color: #fff;
+  box-shadow: unset;
+}
+
+.btn.btn--blu:active {
+  background-color: #7c8eb9;
+  border-color: #7c8eb9;
+}
+
+.btn.btn--ripple-blu {
+  background-position: center;
+  transition: background 0.3s;
+}
+.btn.btn--ripple-blu:hover {
+  background: #7c8eb9  radial-gradient(circle, transparent 1%, #5B72A7 1%) center/15000%;
+}
+.btn.btn--ripple-blu:active {
+  background-color: #7c8eb9;
+  background-size: 100%;
+  transition: background 0s;
+}
+
+/* -----------------------------------------
+/* New buttons > Btn blu no background
+/* ---------------------------------------- */
+.btn.btn--blu-no-bkgnd {
+  border:1px solid rgb(91, 114, 167) !important;
+  color: rgb(91, 114, 167);
+  background-color: #fff;
+  border-radius: 999px !important;
+  box-shadow: unset;
+  font-family: "Poppins","Roboto", "Arial", sans-serif;
+  text-transform: unset;
+}
+
+.btn.btn--blu-no-bkgnd:hover {
+  background-color: rgba(91, 114, 167, .2);
+  border: 1px solid #7c8eb9;
+  color: rgb(91, 114, 167);
+  box-shadow: unset;
+}
+
+.btn.btn--blu-no-bkgnd:focus {
+  background-color: rgba(91, 114, 167, .2);
+  border: 1px solid #7c8eb9;
+  color: rgb(91, 114, 167);
+  box-shadow: unset;
+}
+
+.btn.btn--blu-no-bkgnd:active {
+  background-color: rgba(91, 114, 167, .2);
+  border: 1px solid rgba(91, 114, 167, .2);
+  color: rgb(91, 114, 167);
+  box-shadow: unset;
+}
+
+.btn.btn--ripple-blu-no-bkgnd {
+  background-position: center;
+  transition: background 0.3s;
+}
+.btn.btn.btn--ripple-blu-no-bkgnd:hover {
+  background: rgba(91, 114, 167, .1) radial-gradient(circle, transparent 1%, rgba(91, 114, 167, .3) 1%) center/15000%;
+}
+
+.btn.btn--ripple-blu-no-bkgnd:active {
+  background-color: #7c8eb9;
+  background-size: 100%;
+  transition: background 0s;
+}
+
+.btn-block {
+  display: block;
+  max-width: 100%;
+  min-width: auto;
+  width: 100%;
+}
+
+.btn-size-m {
+  font-size: 14px !important;
+  height: 34px;
+  line-height: 18px;
+  min-width: 64px;
+  padding: 0 14px;
+}
+
+.btn-size-l {
+  font-size: 16px;
+  height: 38px;
+  line-height: 20px;
+  min-width: 80px;
+  padding: 0 16px;
+}
+
+
+.btn--default {
+  background-color: transparent;
+  border: 1px solid #d1d9e0;
+  color: #333;
+  box-shadow: none;
+  text-transform: none;
+  min-width: 160px;
+}
+
+.btn--default:hover {
+  background-color: #eff2f6;
+  border: 1px solid #acb8cb;
+  color: #333;
+}

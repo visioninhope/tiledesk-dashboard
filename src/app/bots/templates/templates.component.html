@@ -22,7 +22,7 @@
                 <div class="row button-row">
                     <div class="col-sm-12">
                         <div class="t--btn-wpr">
-                            <button type="button" class="btn btn-new btn-size-m btn--primary"
+                            <button type="button" class="btn btn-size-m btn--blu btn--ripple-blu"
                                 (click)="createBlankTilebot()">
                                 <span>Add from scratch</span>
                             </button>
@@ -100,7 +100,7 @@
                         </div> -->
                     </div>
                     <loading-spinner *ngIf="showSpinner"></loading-spinner>
-                    <div *ngIf="!showSpinner" class="page-content">
+                    <div *ngIf="!showSpinner" class="templates-page-content">
 
                         <!--  -->
                         <div *ngIf="CERTIFIED_TEMPLATE" class="template-cards-wpr">
@@ -180,16 +180,16 @@
                                         {{template.name}}
                                     </h2>
                                     <span size="8" class="blank-span-h08"></span>
-                                    <p weight="normal" class="template-description">
-                                        <!-- {{template.description}} -->
-                                        {{template.shortDescription}}
+                                    <p weight="normal" class="template-description line--clamp">
+                                        {{template?.description}}
+                                        <!-- {{template.shortDescription}} -->
                                         <!-- <span style="display: block; margin-top: 6px;"
                                             *ngIf="template?.certified === false" class="template-author">
                                             Author: {{template.createdBy}}
                                         </span> -->
                                     </p>
                                     <div class="use-template-btn-row use-template-btn-wpr">
-                                        <button type="button" class="btn btn-new btn-size-l btn--primary btn-block"
+                                        <button type="button" class="btn btn-new btn-size-l btn--blu btn--ripple-blu btn-block"
                                             (click)="openDialog(template)">
 
                                             <span>Use template</span>

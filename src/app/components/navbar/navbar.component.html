@@ -130,7 +130,7 @@
         <ng-container *ngIf="isVisible">
           <li *ngIf="project && prjct_profile_type === 'payment' && HOME_ROUTE_IS_ACTIVE === false">
             <a>
-          
+
 
 
               <!--  ------------------------------------------------ -->
@@ -181,41 +181,18 @@
         </ng-container> -->
 
 
-        <!-- ------------------------------------------------------ -->
-        <!-- test site btn -->
-        <!-- ------------------------------------------------------ -->
-        <ng-container class="test-site">
-          <li *ngIf="project">
-            <button class="btn btn-success-no-boxshadow simulate-visitor-btn" style="font-size: 12px;margin-top: 14px;padding: 0px 11px 0px 4px !important; max-height:24px; border-radius: 30px;
-            font-family: 'Poppins';" (click)="testWidgetPage()">
-              <i class="material-icons" style="padding-top: 0px;font-size: 24px;">play_arrow</i>
-              <span>{{ 'VisitorsPage.SimulateVisitor' | translate }} </span>
-            </button>
-          </li>
-        </ng-container>
-        <!-- <ng-container class="test-site">
-          <li *ngIf="project">
-            <a class=" navbar-test-site-ancor" (click)="testWidgetPage()">
-              <div class="navbar-test-site-btn-wpr tool_tip">
-                <i class="material-icons navbar-test-site-icon" style="vertical-align: middle;">play_arrow</i>
-                <p class="hidden-lg hidden-md">testwidget</p>
-                <div class="bottom"
-                  style="text-align: center; padding:2px 5px; border-radius: 3px; text-transform: none;  min-width: fit-content; white-space: nowrap; top: 31px; opacity: 1;">
-                  {{ 'VisitorsPage.SimulateVisitor' | translate }}
-                  <i></i>
-                </div>
-              </div>
-            </a>
-          </li>
-        </ng-container> -->
+     
+
 
         <!--  ------------------------------------------------ -->
         <!--  ------ PROJECTS  DROPDOWN ------ -->
         <!--  ------------------------------------------------ -->
         <li *ngIf="project">
           <a href="#" class="dropdown-toggle project-dropdown" data-toggle="dropdown">
-            <i id="navbar-dropdown" class="material-icons" style="margin-right: 3px;">keyboard_arrow_down</i>
+           
             <span style="text-transform: none"> {{ project.name }} </span>
+
+            <i id="navbar-dropdown" class="material-icons" style="margin-right: 3px;">keyboard_arrow_down</i>
             <!-- <p class="hidden-lg hidden-md">Projects</p> -->
           </a>
 
@@ -316,6 +293,25 @@
 
           </ul>
         </li>
+
+
+        <!-- ------------------------------------------------------ -->
+        <!-- Test site btn -->
+        <!-- ------------------------------------------------------ -->
+        <ng-container class="test-site">
+          <li *ngIf="project">
+            <!-- btn-success-no-boxshadow simulate-visitor-btn -->
+            <button class="btn btn-size-m btn--blu-no-bkgnd btn--ripple-blu-no-bkgnd simulate-visitor-btn"
+              (click)="testWidgetPage()">
+              <span class="material-icons-outlined" style="font-size: 20px;">
+                face_unlock
+              </span>
+              <span>
+                {{ 'VisitorsPage.SimulateVisitor' | translate }}
+              </span>
+            </button>
+          </li>
+        </ng-container>
 
 
         <!--  ------------------------------------------------ -->
@@ -506,5 +502,3 @@
   </div>
   <!-- /.modal-dialog -->
 </div>
-
-

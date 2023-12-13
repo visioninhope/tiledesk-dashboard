@@ -21,26 +21,25 @@
 
     <div class="content-wpr" style="display: flex;">
 
-      <appdashboard-bots-sidebar 
-        [allTemplatesCount]="allTemplatesCount"
+      <appdashboard-bots-sidebar [allTemplatesCount]="allTemplatesCount"
         [allCommunityTemplatesCount]="allCommunityTemplatesCount"
         [customerSatisfactionTemplatesCount]="customerSatisfactionTemplatesCount"
-        [increaseSalesTemplatesCount]="increaseSalesTemplatesCount" 
-        [myChatbotOtherCount]="myChatbotOtherCount"
+        [increaseSalesTemplatesCount]="increaseSalesTemplatesCount" [myChatbotOtherCount]="myChatbotOtherCount"
         [customerSatisfactionBotsCount]="customerSatisfactionBotsCount"
         [increaseSalesBotsCount]="increaseSalesBotsCount" style="border-right:1px solid #e5effe !important;">
       </appdashboard-bots-sidebar>
+      
       <div class="teplate-content" style="flex: 1 1 auto; margin-left: 20px;">
-
         <div class="row">
           <div class="col-xs-12">
-            <button class="btn btn-new btn-size-m btn--primary pull-right" (click)="createBlankTilebot()"
-              style="margin-right: 20px; box-shadow: unset;">
-              Add from scratch
-            </button>
-            <button class="btn btn-new btn-size-m btn--primary pull-right" (click)="goToBotAllTemplates()"
-              style="margin-right: 16px;box-shadow: unset;">
+            <button class="btn btn-size-m btn--blu btn--ripple-blu pull-right" (click)="goToBotAllTemplates()" 
+              style="margin-right: 16px;">
               Add from template
+            </button>
+       
+            <button class="btn btn-size-m btn--blu-no-bkgnd btn--ripple-blu-no-bkgnd pull-right" (click)="createBlankTilebot()"
+               style="margin-right: 16px;">
+              Add from scratch
             </button>
           </div>
         </div>
@@ -48,6 +47,35 @@
 
         <div class="row">
           <div class="col-xs-12">
+
+            <!-- new table -->
+            <!-- <div class="new-table-wpr">
+              <div class="new-table">
+                <div class="new-table-header-row">
+                  <div class="new-table-body-row" *ngFor="let faqkb of faqkbList; let i = index">
+                    <div class="new-table-col">
+                      <img *ngIf="UPLOAD_ENGINE_IS_FIREBASE" class="bot--img"
+                        src="https://firebasestorage.googleapis.com/v0/b/{{storageBucket}}/o/profiles%2F{{faqkb?._id}}%2Fphoto.jpg?alt=media"
+                        onerror="this.src='assets/img/avatar_bot_tiledesk.svg'" />
+
+                      <img *ngIf="!UPLOAD_ENGINE_IS_FIREBASE" class="bot--img" [src]="faqkb.botImage"
+                        onerror="this.src='assets/img/avatar_bot_tiledesk.svg'" />
+
+
+                      <div class="new-table-col-name">
+                        {{ faqkb?.name }}
+
+                        <span class="bot--full--desc">
+                          {{ faqkb?.description}}
+                        </span>
+                      </div>
+                    </div>
+                  </div>
+
+                </div>
+              </div>
+            </div>  -->
+            <!-- ./new table -->
 
             <div class="card card--no-border" style="margin-top: 5px;">
               <!-- <div class="card-header card-header-custom-bkgrnd">
@@ -105,11 +133,11 @@
 
                       <th>
                         <span class="column-th-span">
-                       
-                          {{ "BotsPage.CreationDate" | translate }} 
-                        
-                      </span>
-                    </th>
+
+                          {{ "BotsPage.CreationDate" | translate }}
+
+                        </span>
+                      </th>
 
                       <th>
                         <span class="column-th-span">
@@ -170,12 +198,11 @@
                           <!-- <img *ngIf="!UPLOAD_ENGINE_IS_FIREBASE" class="bot--img"
                             src="{{baseUrl}}images?path=uploads%2Fusers%2F{{faqkb?._id}}%2Fimages%2Fthumbnails_200_200-photo.jpg"
                             onerror="this.src='assets/img/avatar_bot_tiledesk.svg'" /> -->
-                            
-                            <img *ngIf="!UPLOAD_ENGINE_IS_FIREBASE" class="bot--img"
-                            [src]="faqkb.botImage"
+
+                          <img *ngIf="!UPLOAD_ENGINE_IS_FIREBASE" class="bot--img" [src]="faqkb.botImage"
                             onerror="this.src='assets/img/avatar_bot_tiledesk.svg'" />
 
-                            
+
 
                           <span *ngIf="faqkb.type === 'internal'">
                             <img class="bot-type-logo" src="assets/img/tiledesk_logo_no_text.png" />
@@ -306,47 +333,37 @@
                       <td>
                         <!-- {{ faqkb?.createdAt | date: 'd/M/y'}} -->
                         {{ faqkb?.createdAt | amDateFormat: 'LLL'}}
-                        
-                      </td> 
-                  
+
+                      </td>
+
                       <td class="td-actions text-right" style="padding-top:18px !important">
                         <!-- rel="tooltip" title="{{ 'BotsPage.tooltipEditBot' | translate }}" -->
-                        <button type="button" 
-                          class="btn btn-primary btn-simple btn-xs"
-                          (click)='goToBotDtls(faqkb)'
-                          matTooltipClass="custom-mat-tooltip"
-                          matTooltip="{{ 'BotsPage.tooltipEditBot' | translate }}" 
-                          #tooltip="matTooltip" 
-                          matTooltipPosition='below' 
-                          matTooltipHideDelay="100">
+                        <button type="button" class="btn btn-primary btn-simple btn-xs" (click)='goToBotDtls(faqkb)'
+                          matTooltipClass="custom-mat-tooltip" matTooltip="{{ 'BotsPage.tooltipEditBot' | translate }}"
+                          #tooltip="matTooltip" matTooltipPosition='below' matTooltipHideDelay="100">
                           <i class="material-icons">edit</i>
                         </button>
 
                         <!-- rel="tooltip" title="{{ 'Duplicate' | translate }}" -->
-                      <button type="button" 
-                        class="btn btn-primary btn-simple btn-xs"
-                        (click)='duplicateChatbot(faqkb?._id,  faqkb?.name)'
-                          matTooltipClass="custom-mat-tooltip"
-                          matTooltip="{{ 'Duplicate' | translate }}" 
-                          #tooltip="matTooltip" 
-                          matTooltipPosition='below' 
-                          matTooltipHideDelay="100" >
-                        <i class="material-icons">content_copy</i>
-                      </button>
+                        <button type="button" class="btn btn-primary btn-simple btn-xs"
+                          (click)='duplicateChatbot(faqkb?._id,  faqkb?.name)' matTooltipClass="custom-mat-tooltip"
+                          matTooltip="{{ 'Duplicate' | translate }}" #tooltip="matTooltip" matTooltipPosition='below'
+                          matTooltipHideDelay="100">
+                          <i class="material-icons">content_copy</i>
+                        </button>
 
-                        
-                      <!-- <button *ngIf="faqkb?.type === 'tilebot' && isPanelRoute === false" type="button" rel="tooltip" title="{{ 'BotsPage.tooltipEditBot' | translate }}"
+
+                        <!-- <button *ngIf="faqkb?.type === 'tilebot' && isPanelRoute === false" type="button" rel="tooltip" title="{{ 'BotsPage.tooltipEditBot' | translate }}"
                         class="btn btn-primary btn-simple btn-xs" (click)='goToCDS(faqkb?._id, faqkb?.type,  faqkb?.name)'>
                         <i class="material-icons" style="color: rgb(0, 0, 0);">rocket_launch</i>
                       </button> -->
-                      <!-- rel="tooltip"title="{{ 'BotsPage.tooltipDeleteBot' | translate }}" -->
-                        <button *ngIf="!faqkb?.is_system_identity_bot" type="button"  class="btn btn-danger btn-simple btn-xs"
+                        <!-- rel="tooltip"title="{{ 'BotsPage.tooltipDeleteBot' | translate }}" -->
+                        <button *ngIf="!faqkb?.is_system_identity_bot" type="button"
+                          class="btn btn-danger btn-simple btn-xs"
                           (click)='openDeleteModal(faqkb?._id, faqkb?.name, faqkb?.has_faq, faqkb?.type)'
                           matTooltipClass="custom-mat-tooltip"
-                          matTooltip="{{ 'BotsPage.tooltipDeleteBot' | translate }}" 
-                          #tooltip="matTooltip" 
-                          matTooltipPosition='below' 
-                          matTooltipHideDelay="100">
+                          matTooltip="{{ 'BotsPage.tooltipDeleteBot' | translate }}" #tooltip="matTooltip"
+                          matTooltipPosition='below' matTooltipHideDelay="100">
                           <i class="material-icons">close</i>
                         </button>
                       </td>

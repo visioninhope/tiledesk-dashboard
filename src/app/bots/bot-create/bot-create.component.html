@@ -125,7 +125,7 @@
                           {{ 'CreateA' | translate: translateparam }}
                         </span>
                         <span *ngIf="botType === 'resolution' &&  HAS_SELECTED_CREATE_BOT === false">
-                          Import from JSON
+                          Import chatbot from JSON
                         </span>
 
                         <span *ngIf="botType === 'external'">
@@ -158,8 +158,8 @@
             </div>
             <div class="row" *ngIf="botType === 'tilebot' &&  HAS_SELECTED_CREATE_BOT === false">
               <div class="col-sm-12">
-                <div class="create-tilebot-header">
-                  Import from JSON
+                <div class="create-tilebot-sub-header">
+                  Import chatbot from JSON
                 </div>
               </div>
             </div>
@@ -182,15 +182,13 @@
             </div>
 
             <!-- ------------------------------------------------------------------- -->
-            <!-- @ Button create bot (dialogflow - external)  -->
+            <!-- @ Button create Tilebot From Scratch -->
             <!-- ------------------------------------------------------------------- -->
             <div class="row" *ngIf="botType === 'tilebot' && HAS_SELECTED_CREATE_BOT === true">
-
-
               <div class="col-sm-12">
-                <button [disabled]="faqKbName?.length < 2" class="btn btn-lg btn-primary"
+                <button [disabled]="faqKbName?.length < 2" class="btn btn-lg btn--blu btn--ripple-blu"
                   (click)="createTilebotBotFromScratch()">
-                  Create chatbot
+                   Create chatbot
                 </button>
               </div>
             </div>
@@ -429,11 +427,11 @@
               <span class="import-chatbot-from-json-btn-wpr" style="margin-left: 16px;">
                 <input style="display:inline" name="upload-chatbot-from-json" id="upload-chatbot-from-json"
                   class="inputfile" type="file" (change)="fileChangeUploadChatbotFromJSON($event)" accept=".json" />
-                <label class="btn btn-primary btn-lg" for="upload-chatbot-from-json">
-                  <span class="material-icons" style="padding-right: 8px;">
+                <label class="btn btn--blu btn--ripple-blu btn-lg" for="upload-chatbot-from-json">
+                  <!-- <span class="material-icons" style="padding-right: 8px;">
                     cloud_upload
-                  </span>
-                  Import Chatbot from JSON
+                  </span> -->
+                  Import JSON
                 </label>
               </span>
             </div>

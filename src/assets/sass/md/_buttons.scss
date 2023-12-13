@@ -222,9 +222,9 @@
   margin: 10px 1px;
 
   &.open {
-    .dropdown-toggle {
-      //box-shadow: none;
-    }
+    // .dropdown-toggle {
+    //   //box-shadow: none;
+    // }
 
     & > .dropdown-toggle.btn {
       @include variations(unquote(".btn"), unquote(""), background-color, $mdb-btn-background-color);
