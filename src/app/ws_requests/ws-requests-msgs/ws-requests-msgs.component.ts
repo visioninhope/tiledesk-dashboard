@@ -218,7 +218,7 @@ export class WsRequestsMsgsComponent extends WsSharedComponent implements OnInit
   subscription: Subscription;
   CURRENT_USER_ROLE: string;
 
-  CHAT_PANEL_MODE: boolean;
+  CHAT_PANEL_MODE: boolean // = true; // nk for test change color
   dshbrdBaseUrl: string;
   project_name: string;
 
@@ -1221,6 +1221,7 @@ export class WsRequestsMsgsComponent extends WsSharedComponent implements OnInit
       _elemMainPanel.classList.add("main-panel-chat-panel-mode");
 
     } else {
+      // this.CHAT_PANEL_MODE = true; // nk for test change color
       this.CHAT_PANEL_MODE = false;
       // thia.logger.log('[WS-REQUESTS-MSGS] - CHAT_PANEL_MODE »»» ', this.CHAT_PANEL_MODE);
       const _elemMainPanel = <HTMLElement>document.querySelector('.main-panel');
@@ -1366,8 +1367,11 @@ export class WsRequestsMsgsComponent extends WsSharedComponent implements OnInit
   // ----------------------------------------------------------------------------
   getParamRequestId() {
     this.route.params.subscribe((params) => {
-      // this.logger.log('[WS-REQUESTS-MSGS] - getParamRequestId  ', params);
-      this.getBotConversationAttribute(params.requestid)
+     // ------------------------------------------------------
+     // Request for the Chatbot attributes accordion  NO MORE USED
+     // ------------------------------------------------------
+     // this.getBotConversationAttribute(params.requestid);
+
       if (this.id_request) {
         // this.logger.log('[WS-REQUESTS-MSGS] - UNSUB-REQUEST-BY-ID - id_request ', this.id_request);
 
@@ -5538,16 +5542,6 @@ export class WsRequestsMsgsComponent extends WsSharedComponent implements OnInit
 
     if (clicked_element_id.startsWith("edit-fullname")) {
       this.logger.log('>>> click inside')
-      // const elemDropDown = <HTMLElement>document.querySelector('.dropdown__menu-form');
-      // // this.logger.log('elemDropDown EDIT CONTACT NAME ', elemDropDown)
-      // if (!elemDropDown.classList.contains("dropdown__menu-form--active")) {
-
-      //   elemDropDown.classList.add("dropdown__menu-form--active");
-      //   // this.logger.log('here 1 A')
-      // } else if (elemDropDown.classList.contains("dropdown__menu-form--active")) {
-      //   elemDropDown.classList.remove("dropdown__menu-form--active");
-      //   // this.logger.log('here 2 A')
-      // }
     } else {
       this.logger.log('[WS-REQUESTS-MSGS] >>> click outside')
       this.closeEditContactFullnameDropdown()
