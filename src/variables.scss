@@ -5,12 +5,17 @@
  // 8796af = rgb(135, 150, 175)
  //  --list-item-action-btn-color: rgb(100, 116, 145);
  // --conv-tag-color: #444950;
+
+ // https://www.rgbtohex.net/rgb/91-114-167  intessant link for the new color 5b72a7
+ // https://color.adobe.com/color-palette-free-download-color-theme-14037012/ intessant linkfor the new color  5b72a7
  body {
      --conv-details-header-background: #ffffff;
      --conversation-detail-background: #f8fafc;
      --card-background-color: rgb(255, 255, 255);
      --card-elevation: rgb(0 27 71 / 8%) 0px 3px 8px;
      --icon-color: #8796af;
+     --light-periwinkle: #5b72a7;
+
      --icon-hover-color: rgb(5, 102, 255);
      --text-color: #555555;
      --secondary-text-color: #8796af;
@@ -173,13 +178,14 @@
      --card-background-color: #101725;
      --card-elevation: rgb(0 27 71 / 8%) 0px 3px 8px;
      --icon-color: #8796af;
+     --light-periwinkle: #5b72a7;
      --icon-hover-color: rgb(5, 102, 255);
      --text-color: #fff;
      --secondary-text-color: rgb(148, 163, 184);
      --list-item-input-row-hover-background: rgb(30, 41, 59);
      --texarea-background: rgb(30, 41, 59);
      --texarea-border: 1px solid #ccc;
-     --table-tr-hover: #1e293b;;
+     --table-tr-hover: #1e293b;
      --select-background: #101725;
      --select-background-marked: rgba(30, 33, 41, 0.8);
      --select-border: unset !important;

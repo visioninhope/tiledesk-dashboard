@@ -917,5 +917,15 @@ button.close.custom-hover:hover {
   display: flex;
   flex-direction: row;
   align-items: center;
-  gap: 6px;
+  gap: 3px;
+  max-height: 30px;
 }
+
+.project-dropdown > i {
+  margin-left: 3px;
+  border: 1px solid var(--light-periwinkle);
+  border-radius: 999px;
+  color: var(--text-color);
+  position: relative;
+}
+
