@@ -1,4 +1,4 @@
-import { Component, Input, OnChanges, OnInit, Output, SimpleChanges, EventEmitter, Type } from '@angular/core';
+import { Component, Input, OnChanges, OnInit, Output, SimpleChanges, EventEmitter, Type, OnDestroy } from '@angular/core';
 import { Router } from '@angular/router';
 import { AuthService } from 'app/core/auth.service';
 import { FaqKb } from 'app/models/faq_kb-model';
@@ -21,7 +21,7 @@ import { BotLocalDbService } from 'app/services/bot-local-db.service';
   templateUrl: './home-create-chatbot.component.html',
   styleUrls: ['./home-create-chatbot.component.scss']
 })
-export class HomeCreateChatbotComponent implements OnInit, OnChanges {
+export class HomeCreateChatbotComponent implements OnInit, OnChanges, OnDestroy {
   @Input() use_case_for_child: string;
   @Input() solution_channel_for_child: string;
   @Input() waBotId: string;
@@ -93,6 +93,10 @@ export class HomeCreateChatbotComponent implements OnInit, OnChanges {
     this.getTemplates(this.use_case_for_child)
 
   }
+  ngOnDestroy(): void {
+    this.unsubscribe$.next();
+    this.unsubscribe$.complete();
+  }
 
   getTemplates(use_case) {
     // this.showSpinner = true;
@@ -144,7 +148,7 @@ export class HomeCreateChatbotComponent implements OnInit, OnChanges {
 
   openDialog(template) {
     this.logger.log('openDialog TemplateDetailComponent template ', template)
-  
+
     const dialogRef = this.dialog.open(TemplateDetailComponent, {
       data: {
         template: template,
@@ -214,6 +218,18 @@ export class HomeCreateChatbotComponent implements OnInit, OnChanges {
     }
 
   }
+  getBotNumOfMsgs(bot) {
+    this.faqKbService.getNumberOfMessages(bot._id, bot.type).subscribe((res: any) => {
+      console.log("[HOME-CREATE-CHATBOT] Messages sent from bot._id: ", bot._id);
+      console.log("[HOME-CREATE-CHATBOT] Messages sent from bot: ", res);
+      if (res.length == 0) {
+        bot.message_count = 0;
+      } else {
+        bot.message_count = res[0].totalCount;
+      }
+    })
+
+  }
 
 
   getProjectBots(storage, uploadEngineIsFirebase) {
@@ -247,6 +263,8 @@ export class HomeCreateChatbotComponent implements OnInit, OnChanges {
       })
 
 
+
+
       if (faqKb) {
         // -----------------------------------------------------------
         // CHECK IF USER HAS IMAGE (AFTER REMOVING THE "IDENTITY BOT")
@@ -259,6 +277,13 @@ export class HomeCreateChatbotComponent implements OnInit, OnChanges {
           } else {
             bot.isConnectToWA = false
           }
+
+         const botURL = bot.url
+
+          // this.getBotNumOfMsgs(bot)
+
+
+
 
           // if (bot && bot['type'] === "identity") {
 
@@ -354,19 +379,19 @@ export class HomeCreateChatbotComponent implements OnInit, OnChanges {
     } else if (this.use_case_for_child === 'increase_online_sales') {
       this.router.navigate(['project/' + this.projectId + '/bots/templates/increase-sales']);
     } else if (this.use_case_for_child === undefined) {
-      this.trackUserAction.emit({action:'Explore Templates', actionRes: 'All' })
+      this.trackUserAction.emit({ action: 'Explore Templates', actionRes: 'All' })
       this.router.navigate(['project/' + this.projectId + '/bots/templates/all']);
     }
     localStorage.setItem('wawizard', 'hookbot')
   }
 
   goToIncreaseSalesTemplates() {
-    this.trackUserAction.emit({action:'Explore Templates', actionRes: 'Increase Sales' })
+    this.trackUserAction.emit({ action: 'Explore Templates', actionRes: 'Increase Sales' })
     this.router.navigate(['project/' + this.projectId + '/bots/templates/increase-sales']);
   }
 
   goToCustomerSatisfactionTemplates() {
-    this.trackUserAction.emit({action:'Explore Templates', actionRes: 'Customer Satisfaction' })
+    this.trackUserAction.emit({ action: 'Explore Templates', actionRes: 'Customer Satisfaction' })
     this.router.navigate(['project/' + this.projectId + '/bots/templates/customer-satisfaction']);
   }
 
@@ -381,7 +406,7 @@ export class HomeCreateChatbotComponent implements OnInit, OnChanges {
   }
 
   presentModalAddBotFromScratch() {
- 
+
     this.logger.log('[HOME-CREATE-CHATBOT] - presentModalAddBotFromScratch ');
     const addKbBtnEl = <HTMLElement>document.querySelector('#home-material-btn');
     // this.logger.log('[HOME-CREATE-CHATBOT] - presentModalAddBotFromScratch addKbBtnEl ', addKbBtnEl);
@@ -419,8 +444,8 @@ export class HomeCreateChatbotComponent implements OnInit, OnChanges {
           // this.translateparamBotName = { bot_name: this.newBot_name }
           // SAVE THE BOT IN LOCAL STORAGE
           this.botLocalDbService.saveBotsInStorage(faqKb['_id'], faqKb);
-          
-          this.trackUserAction.emit({action:'Create chatbot',actionRes: faqKb })
+
+          this.trackUserAction.emit({ action: 'Create chatbot', actionRes: faqKb })
 
           // this.router.navigate(['project/' + this.projectId + '/cds/', this.newBot_Id, 'intent', '0', 'h']);
           goToCDSVersion(this.router, faqKb, this.projectId, this.appConfigService.getConfig().cdsBaseUrl)
@@ -433,7 +458,7 @@ export class HomeCreateChatbotComponent implements OnInit, OnChanges {
 
       }, () => {
         this.logger.log('[HOME-CREATE-CHATBOT] CREATE FAQKB - POST REQUEST * COMPLETE *');
-        
+
 
       })
   }

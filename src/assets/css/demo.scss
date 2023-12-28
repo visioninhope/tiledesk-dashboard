@@ -1734,7 +1734,7 @@ appdashboard-app-store > div > div > div > div > .card-app-store {
 }
 
 /* -----------------------------------------
-/* New buttons > Btn Priamary
+/* New buttons > Btn Primary
 /* ----------------------------------------- */
 .btn--primary {
   background-color: #0566ff;
@@ -1829,7 +1829,8 @@ appdashboard-app-store > div > div > div > div > .card-app-store {
 /* -----------------------------------------
 /* New buttons > Btn blu
 /* ----------------------------------------- */
-
+// rgb(91, 114, 167) = 5b72a7 (--light-periwinkle)
+// 7c8eb9  (--opal-violet;)
 .btn.btn--blu {
   background-color: rgb(91, 114, 167);
   border-color: rgb(91, 114, 167);
@@ -1875,7 +1876,9 @@ appdashboard-app-store > div > div > div > div > .card-app-store {
 /* -----------------------------------------
 /* New buttons > Btn blu no background
 /* ---------------------------------------- */
-.btn.btn--blu-no-bkgnd {
+// rgb(91, 114, 167) = 5b72a7 (--light-periwinkle)
+// 7c8eb9  (--opal-violet;)
+.btn.btn--blu-outline {
   border:1px solid rgb(91, 114, 167) !important;
   color: rgb(91, 114, 167);
   background-color: #fff;
@@ -1885,40 +1888,167 @@ appdashboard-app-store > div > div > div > div > .card-app-store {
   text-transform: unset;
 }
 
-.btn.btn--blu-no-bkgnd:hover {
+.btn.btn--blu-outline:hover {
   background-color: rgba(91, 114, 167, .2);
   border: 1px solid #7c8eb9;
   color: rgb(91, 114, 167);
   box-shadow: unset;
 }
 
-.btn.btn--blu-no-bkgnd:focus {
+.btn.btn--blu-outline:focus {
   background-color: rgba(91, 114, 167, .2);
   border: 1px solid #7c8eb9;
   color: rgb(91, 114, 167);
   box-shadow: unset;
 }
 
-.btn.btn--blu-no-bkgnd:active {
+.btn.btn--blu-outline:active {
   background-color: rgba(91, 114, 167, .2);
   border: 1px solid rgba(91, 114, 167, .2);
   color: rgb(91, 114, 167);
   box-shadow: unset;
 }
 
-.btn.btn--ripple-blu-no-bkgnd {
+.btn.btn--ripple-blu-outline {
   background-position: center;
   transition: background 0.3s;
 }
-.btn.btn.btn--ripple-blu-no-bkgnd:hover {
+.btn.btn.btn--ripple-blu-outline:hover {
   background: rgba(91, 114, 167, .1) radial-gradient(circle, transparent 1%, rgba(91, 114, 167, .3) 1%) center/15000%;
 }
 
-.btn.btn--ripple-blu-no-bkgnd:active {
+.btn.btn--ripple-blu-outline:active {
   background-color: #7c8eb9;
   background-size: 100%;
   transition: background 0s;
 }
+
+
+/* -----------------------------------------
+/* New buttons > new primary button 
+/* ----------------------------------------- */
+// rgb(91, 114, 167) = 5b72a7 (--light-periwinkle)
+// 7c8eb9  (--opal-violet;)
+// --indigo -> #6883d0
+//--indigo-deep -> #5b5dbc
+
+.btn.btn-p {
+  background-color: var(--indigo);
+  border-color: var(--indigo);
+  color: #fff;
+  text-transform: none;
+  border-radius: 999px;
+  box-shadow: unset;
+  font-family: "Poppins","Roboto", "Arial", sans-serif;
+}
+
+.btn.btn-p:hover {
+  background-color: var(--indigo-deep);
+  border-color: var(--indigo-deep);
+  color: #fff;
+  box-shadow: unset;
+}
+
+.btn.btn-p:focus {
+  background-color: var(--indigo-deep);
+  border-color: var(--indigo-deep);
+  color: #fff;
+  box-shadow: unset;
+}
+
+.btn.btn-p:active {
+  background-color: var(--indigo-deep);
+  border-color: var(--indigo-deep);
+}
+
+.btn.btn-p-ripple {
+  background-position: center;
+  transition: background 0.3s;
+}
+.btn.btn-p-ripple:hover {
+  background: var(--indigo-deep)  radial-gradient(circle, transparent 1%, var(--indigo) 1%) center/15000%;
+}
+.btn.btn-p-ripple:active {
+  background-color: #7c8eb9;
+  background-size: 100%;
+  transition: background 0s;
+}
+
+
+/* -----------------------------------------
+/* New buttons > new primary btn
+/* ---------------------------------------- */
+// rgb(91, 114, 167) = 5b72a7 (--light-periwinkle)
+// 7c8eb9  (--opal-violet;)
+.btn.btn-p-outline {
+  border:1px solid var(--indigo) !important;
+  color: var(--indigo);
+  background-color: #fff;
+  border-radius: 999px !important;
+  box-shadow: unset;
+  font-family: "Poppins","Roboto", "Arial", sans-serif;
+  text-transform: unset;
+}
+
+.btn.btn-p-outline:hover {
+  background-color: rgba(104, 131, 208, .2);
+  border: 1px solid var(--indigo-deep);
+  color: var(--indigo-deep);
+  box-shadow: unset;
+}
+
+.btn.btn-p-outline:focus {
+  background-color: rgba(104, 131, 208, .2);
+  border: var(--indigo-deep);
+  color: var(--indigo-deep);
+  box-shadow: unset;
+}
+
+.btn.btn-p-outline:active {
+  background-color: rgba(104, 131, 208, .2);
+  border: 1px solid var(--indigo-deep);
+  color: var(--indigo-deep);
+  box-shadow: unset;
+}
+
+.btn.btn-p-outline-ripple {
+  background-position: center;
+  transition: background 0.3s;
+}
+// .btn.btn.btn-p-outline-ripple:hover {
+//   background: var(--indigo-deep) radial-gradient(circle, transparent 1%, var(--indigo) 1%) center/15000%;
+// }
+
+.btn.btn-p-outline-ripple:active {
+  background-color: rgba(104, 131, 208, .2);
+  background-size: 100%;
+  transition: background 0s;
+}
+
+
+/* -----------------------------------------
+/* New buttons > Btn default
+/* ----------------------------------------- */
+
+.btn--default {
+  background-color: transparent;
+  border: 1px solid #d1d9e0;
+  color: #333;
+  box-shadow: none;
+  text-transform: none;
+  min-width: 160px;
+}
+
+.btn--default:hover {
+  background-color: #eff2f6;
+  border: 1px solid #acb8cb;
+  color: #333;
+}
+
+/* -----------------------------------------
+/* New buttons > Common class
+/* ----------------------------------------- */
+
 
 .btn-block {
   display: block;
@@ -1943,21 +2073,16 @@ appdashboard-app-store > div > div > div > div > .card-app-store {
   padding: 0 16px;
 }
 
-
-.btn--default {
-  background-color: transparent;
-  border: 1px solid #d1d9e0;
-  color: #333;
-  box-shadow: none;
-  text-transform: none;
-  min-width: 160px;
+.btn-size-xl {
+  font-size: 18px;
+  height: 48px;
+  line-height: 20px;
+  min-width: 80px;
+  padding: 0 24px;
 }
 
-.btn--default:hover {
-  background-color: #eff2f6;
-  border: 1px solid #acb8cb;
-  color: #333;
-}
+
+
 // https://github.com/ng-select/ng-select/issues/608
 // .ng-select.custom {
 //   .ng-select-container {

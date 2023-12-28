@@ -16,9 +16,9 @@ export interface FaqKb {
     type?: string;
     description?: string;
     message_count?: number;
-    mainCategory?: any
+    mainCategory?: string
     language?: string;
-   
+    trashed?: boolean;
   
 }
 

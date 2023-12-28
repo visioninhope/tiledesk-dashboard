@@ -373,7 +373,7 @@ export class BotListComponent implements OnInit {
         this.faqkbList = faqKb;
 
         this.faqkbList.forEach(bot => {
-          this.logger.log('[BOTS-LIST] getFaqKbByProjectId bot ', bot)
+          console.log('[BOTS-LIST] getFaqKbByProjectId bot ', bot)
           this.getBotProfileImage(bot) 
           
         });
@@ -446,7 +446,8 @@ export class BotListComponent implements OnInit {
           for (let bot of this.faqkbList) {
             // this.logger.log("BOT LIST - GET NUM OF MESSAGE - BOT : ", bot);
             this.faqKbService.getNumberOfMessages(bot._id, bot.type).subscribe((res: any) => {
-              this.logger.log("[BOTS-LIST] Messages sent from bot: ", res);
+              console.log("[BOTS-LIST] Messages sent from bot._id: ", bot._id);
+              console.log("[BOTS-LIST] Messages sent from bot: ", res);
               if (res.length == 0) {
                 bot.message_count = 0;
               } else {

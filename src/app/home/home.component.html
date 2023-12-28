@@ -7,8 +7,7 @@
 <!-- -------------------------------------------------------------------------------- -->
 
 <div class="overlay" style="display: none;" [ngStyle]="{ 'height': elemHomeMainContentHeight }"></div>
-<div class="main-content home-main-content"
-  style="padding-top: 8px; padding-left: 0px ; padding-right: 0px;margin-top: 0px; background: rgb(241,245,249);">
+<div class="main-content home-main-content"style="">
   <div class="container-fluid " style="max-width: 100%;padding-right: 0px; padding-left: 0px;">
 
     <div class="home-project">
@@ -93,15 +92,19 @@
                 <!-- {{'AdjustOperatingHours' | translate}} -->
                 <ng-container *ngIf="isVisibleOPH && USER_ROLE !== 'agent'">
                   <button mat-mini-fab aria-label="date_range icon"
-                    [ngClass]="{'oph-disabled': !OPERATING_HOURS_ACTIVE || DISPLAY_OPH_AS_DISABLED, 'oph-enabled': OPERATING_HOURS_ACTIVE && !DISPLAY_OPH_AS_DISABLED }"
-                    style="box-shadow: unset;margin-right: 16px;    position: relative;"
-                    [satPopoverAnchor]="editOperatingHours" (click)="editOperatingHours.toggle();"
+                    
+                    style="box-shadow: unset;margin-right: 16px;    position: relative; background-color: #fff;"
+                    [satPopoverAnchor]="editOperatingHours" 
+                    (click)="editOperatingHours.toggle();"
                     matTooltipClass="custom-mat-tooltip" 
                     matTooltip="Adjust operating hours"
                     #tooltip="matTooltip" 
                     matTooltipPosition='below' 
                     matTooltipHideDelay="100">
-                    <mat-icon style="color: #fff;position: relative;top: -2px;">date_range</mat-icon>
+                    <mat-icon style="position: relative;top: -2px;"
+                     [ngClass]="{'ophicon-disabled': !OPERATING_HOURS_ACTIVE || DISPLAY_OPH_AS_DISABLED, 'ophicon-enabled': OPERATING_HOURS_ACTIVE && !DISPLAY_OPH_AS_DISABLED }">
+                     date_range
+                    </mat-icon>
                   </button>
 
                   <sat-popover #editOperatingHours id="edit-operating-hours" horizontalAlign="center"
@@ -149,18 +152,23 @@
                   </sat-popover>
                 </ng-container>
 
-                <!-- ------------------------------------ -->
-                <!-- Settings  mat-primary ng-reflect-color="primary"  -->
-                <!-- ------------------------------------ -->
+                <!-- ----------------------------------------------------------------------------- -->
+                <!-- Settings  mat-primary ng-reflect-color="primary" {{'ViewOption' | translate}} -->
+                <!-- ----------------------------------------------------------------------------- -->
                 <button *ngIf="USER_ROLE !== 'agent'" mat-flat-button="" [matMenuTriggerFor]="dashletMenu"
                   class="mat-focus-indicato mat-flat-button mat-button-base"
-                  style="background-color: #2196f3; color: #fff;margin-right: 4px;">
+                  style="background-color: #fff; color: #fff;margin-right: 4px;"
+                  matTooltipClass="custom-mat-tooltip" 
+                  matTooltip="View Options"
+                  #tooltip="matTooltip" 
+                  matTooltipPosition='below' 
+                  matTooltipHideDelay="100">
                   <span class="mat-button-wrapper">
-                    <mat-icon style="margin-right: 8px; color: #fff">filter_alt</mat-icon>
-                    <span class="ml-2 button-dashlet-settings">
-                      <!-- {{'ViewOption' | translate}} -->
+                    <!-- filter_alt  -->
+                    <mat-icon style="margin-right: 8px; color: #2196f3">tune</mat-icon>
+                    <!-- <span class="ml-2 button-dashlet-settings">
                       View Options
-                    </span>
+                    </span> -->
                   </span>
                   <span matripple="" class="mat-ripple mat-button-ripple" ng-reflect-disabled="false"
                     ng-reflect-centered="false" ng-reflect-trigger="[object HTMLButtonElement]">
@@ -400,7 +408,13 @@
       
           
           <ng-container *ngIf="!showskeleton ">
+
+           
+            
             <span *ngIf="USER_ROLE !== 'agent'">
+
+              <home-cds> </home-cds>
+
               <div  class="home--blocks" id="homeBlocks" *ngFor="let item of child_list_order">
 
                 <!-- ----------------------- -->

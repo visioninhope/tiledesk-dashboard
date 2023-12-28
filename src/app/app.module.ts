@@ -361,6 +361,7 @@ import { KnowledgeBasesComponent } from './knowledge-bases/knowledge-bases.compo
 import { CnpTemplatesComponent } from './create-new-project/cnp-templates/cnp-templates.component';
 import { OnboardingWelcomeComponent } from './create-new-project/onboarding-welcome/onboarding-welcome.component';
 import { HomeNewsFeedModalComponent } from './home-components/home-news-feed/home-news-feed-modal/home-news-feed-modal.component';
+import { HomeCdsComponent } from './home-components/home-cds/home-cds.component';
 
 
 
@@ -638,7 +639,8 @@ const appInitializerFn = (appConfig: AppConfigService, brandService: BrandServic
     HomeGoToChatComponent,
     CnpTemplatesComponent,
     OnboardingWelcomeComponent,
-    HomeNewsFeedModalComponent
+    HomeNewsFeedModalComponent,
+    HomeCdsComponent
   ],
   imports: [
     TooltipModule.forRoot(CutomTooltipOptions as TooltipOptions),

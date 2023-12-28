@@ -921,6 +921,13 @@ button.close.custom-hover:hover {
   max-height: 30px;
 }
 
+.simulate-visitor-btn > .material-icons-outlined { 
+  font-size: 20px;
+  color: var(--text-color)
+}
+
+
+
 .project-dropdown > i {
   margin-left: 3px;
   border: 1px solid var(--light-periwinkle);
