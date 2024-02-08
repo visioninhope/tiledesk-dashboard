@@ -1618,7 +1618,14 @@
         "StatusNotStarted": "Başlatılmadı",
         "StatusStarted": "Başlatıldı",
         "StatusFinished": "Bitti",
-        "StatusError": "Hata"
+        "StatusError": "Hata",
+        "msgSuccesUpdateKb": "Bilgi Bankası başarıyla değiştirildi",
+        "msgSuccesAddKb": "Bilgi Bankası başarıyla eklendi",
+        "msgSuccesDeleteKb": "Bilgi Bankası başarıyla silindi",
+        "msgErrorDeleteKb": "Bilgi Bankası silinemedi",
+        "msgErrorIndexingKb": "Dizine ekleme başarısız oldu",
+        "msgSuccesIndexingKb": "Dizine ekleme başarıyla tamamlandı",
+        "msgErrorAddUpdateKb": "Bilgi Bankası eklenemedi veya düzenlenemedi"
     },
     "AutomationsDemoPageDescription":"“API otomasyonlarımız” ile, API'lerimizin kolaylığıyla birlikte tasarımcının otomasyonlarını kullanarak Whatsapp'taki toplu yayın mesajlarını yönetebilir, favori CRM'nizdeki tüm kişilere mesaj gönderebilir, gönderilen mesajların durumunu (alındı, okundu vb.) alabilirsiniz. ) ve daha fazlası!",
     "Sunday": "Pazar",

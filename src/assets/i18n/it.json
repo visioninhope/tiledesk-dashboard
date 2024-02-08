@@ -1619,7 +1619,14 @@
         "StatusNotStarted": "Non iniziato",
         "StatusStarted": "Iniziato",
         "StatusFinished": "Finito",
-        "StatusError": "Errore"
+        "StatusError": "Errore",
+        "msgSuccesUpdateKb": "Knowledge Base modificata con successo",
+        "msgSuccesAddKb": "Knowledge Base aggiunta con successo",
+        "msgSuccesDeleteKb": "Knowledge Base eliminata con successo",
+        "msgErrorDeleteKb": "Impossibile eliminare la Knowledge Base",
+        "msgErrorIndexingKb": "Indicizzazione non riuscita",
+        "msgSuccesIndexingKb": "Indicizzazione completata con successo",
+        "msgErrorAddUpdateKb": "Impossibile aggiungere o modificare la Knowledge Base"
     },
     "AutomationsDemoPageDescription": "Con le nostre “APIs automations” puoi gestire messaggi broadcast massivi su Whatsapp utilizzando le automazioni del designer uniti alla facilità delle nostre API, inviare messaggi a tutti i contatti del tuo CRM preferito, ricevere lo stato dei messaggi inviati (ricevuto, letto etc.) e molto altro ancora!",
     "Sunday": "Domenica",

@@ -1618,7 +1618,14 @@
         "StatusNotStarted": "Não foi iniciado",
         "StatusStarted": "Iniciado",
         "StatusFinished": "Finalizado",
-        "StatusError": "Erro"
+        "StatusError": "Erro",
+        "msgSuccesUpdateKb": "Base de conhecimento modificada com sucesso",
+        "msgSuccesAddKb": "Base de conhecimento adicionada com sucesso",
+        "msgSuccesDeleteKb": "Base de conhecimento excluída com sucesso",
+        "msgErrorDeleteKb": "A Base de Conhecimento não pôde ser excluída",
+        "msgErrorIndexingKb": "Falha na indexação",
+        "msgSuccesIndexingKb": "Indexação concluída com sucesso",
+        "msgErrorAddUpdateKb": "A base de conhecimento não pôde ser adicionada ou editada"
     },
     "AutomationsDemoPageDescription":"Com nossas “automações de APIs” você pode gerenciar mensagens de difusão em massa no Whatsapp utilizando as automações do designer aliadas à facilidade de nossas APIs, enviar mensagens para todos os contatos do seu CRM favorito, receber o status das mensagens enviadas (recebidas, lidas, etc. ) e muito mais!",
     "Sunday": "Domingo",

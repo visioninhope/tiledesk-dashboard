@@ -10,6 +10,7 @@ import { LoggerService } from 'app/services/logger/logger.service';
 import { OpenaiService } from 'app/services/openai.service';
 import { ProjectService } from 'app/services/project.service';
 import { timer } from 'rxjs';
+import { TranslateService } from '@ngx-translate/core';
 
 @Component({
   selector: 'appdashboard-knowledge-bases',
@@ -67,6 +68,16 @@ export class KnowledgeBasesComponent implements OnInit, OnDestroy {
   kbid_selected: any;
   interval_id;
 
+
+  // messages
+  msgSuccesUpdateKb: string; // 'KB modificato con successo';
+  msgSuccesAddKb: string; // = 'KB aggiunto con successo';
+  msgSuccesDeleteKb: string; // = 'KB eliminato con successo';
+  msgErrorDeleteKb: string; // = 'Non è stato possibile eliminare il kb';
+  msgErrorIndexingKb: string; // = 'Indicizzazione non riuscita';
+  msgSuccesIndexingKb: string; // = 'Indicizzazione terminata con successo';
+  msgErrorAddUpdateKb: string; // = 'Non è stato possibile aggiungere o modificare il kb';
+
   constructor(
     private auth: AuthService,
     private formBuilder: FormBuilder,
@@ -75,24 +86,41 @@ export class KnowledgeBasesComponent implements OnInit, OnDestroy {
     private kbService: KnowledgeBaseService,
     private projectService: ProjectService,
     public route: ActivatedRoute,
-    private notify: NotifyService
+    private notify: NotifyService,
+    private translate: TranslateService
   ) { }
 
   ngOnInit(): void {
     this.getBrowserVersion();
+    this.getTranslations();
     this.listenSidebarIsOpened();
     this.getListOfKb();
     this.kbFormUrl = this.createConditionGroupUrl();
     this.kbFormContent = this.createConditionGroupContent();
     this.trackPage();
     this.getLoggedUser();
-    this.getCurrentProject()
+    this.getCurrentProject();
     this.getRouteParams()
   }
 
   ngOnDestroy(): void {
     clearInterval(this.interval_id);
   }
+
+  getTranslations() {
+    this.translate.get('KbPage')
+      .subscribe((KbPage: any) => {
+        this.msgSuccesUpdateKb = KbPage['msgSuccesUpdateKb'];
+        this.msgSuccesAddKb = KbPage['msgSuccesAddKb'];
+        this.msgSuccesDeleteKb = KbPage['msgSuccesDeleteKb'];
+        this.msgErrorDeleteKb = KbPage['msgErrorDeleteKb'];
+        this.msgErrorIndexingKb = KbPage['msgErrorIndexingKb'];
+        this.msgSuccesIndexingKb = KbPage['msgSuccesIndexingKb'];
+        this.msgErrorAddUpdateKb = KbPage['msgErrorAddUpdateKb'];
+      });
+  }
+
+
 
   getRouteParams() {
     this.route.params.subscribe((params) => {
@@ -141,6 +169,7 @@ export class KnowledgeBasesComponent implements OnInit, OnDestroy {
       }
     });
   }
+
 
   getProjectById(projectId) {
     this.projectService.getProjectById(projectId).subscribe((project: any) => {
@@ -219,6 +248,7 @@ export class KnowledgeBasesComponent implements OnInit, OnDestroy {
   onAddKb(body) {
     // console.log("body:",body);
     this.onCloseBaseModal();
+    let error = this.msgErrorAddUpdateKb;
     this.kbService.addKb(body).subscribe((resp: any) => {
       let kb = resp.value;
       console.log("onAddKb:", kb);
@@ -226,11 +256,11 @@ export class KnowledgeBasesComponent implements OnInit, OnDestroy {
         const index = this.kbsList.findIndex(item => item._id === kb._id);
         if (index !== -1) {
           this.kbsList[index] = kb;
-          this.notify.showWidgetStyleUpdateNotification('KB modificato con successo', 2, 'done');
+          this.notify.showWidgetStyleUpdateNotification(this.msgSuccesUpdateKb, 2, 'done');
         }
       } else {
         this.kbsList.push(kb);
-        this.notify.showWidgetStyleUpdateNotification('KB aggiunto con successo', 2, 'done');
+        this.notify.showWidgetStyleUpdateNotification(this.msgSuccesAddKb, 2, 'done');
       }
       this.updateStatusOfKb(kb._id, 0);
       this.refreshKbsList = !this.refreshKbsList;
@@ -240,8 +270,9 @@ export class KnowledgeBasesComponent implements OnInit, OnDestroy {
         this.checkStatusWithRetry(kb);
       }, 2000);
       //that.onCloseBaseModal();
-    }, (error) => {
-      this.logger.error("[KNOWLEDGE BASES COMP] ERROR add new kb: ", error);
+    }, (err) => {
+      this.logger.error("[KNOWLEDGE BASES COMP] ERROR add new kb: ", err);
+      this.onOpenErrorModal(error);
     }, () => {
       this.logger.log("[KNOWLEDGE BASES COMP] add new kb *COMPLETED*");
       //this.trackUserActioOnKB('Added Knowledge Base', gptkey)
@@ -252,29 +283,26 @@ export class KnowledgeBasesComponent implements OnInit, OnDestroy {
    * onDeleteKb
    */
   onDeleteKb(kb) {
-
     let data = {
       "id": kb._id,
       "namespace": kb.id_project
     }
     // console.log("[KNOWLEDGE BASES COMP] kb to delete id: ", data);
     this.onCloseBaseModal();
+    let error = this.msgErrorDeleteKb; //"Non è stato possibile eliminare il kb";
     this.kbService.deleteKb(data).subscribe((response:any) => {
       console.log('onDeleteKb:: ', response);
       if(!response || (response.success && response.success === false)){
-        let error = "Non è stato possibile eliminare il kb";
         this.updateStatusOfKb(kb._id, 0);
         this.onOpenErrorModal(error);
       } else {
-        this.notify.showWidgetStyleUpdateNotification('KB eliminato con successo', 2, 'done');
+        this.notify.showWidgetStyleUpdateNotification(this.msgSuccesDeleteKb, 2, 'done');
         // let error = response.error?response.error:"Errore generico";
         // this.onOpenErrorModal(error);
         this.removeKb(kb._id);
-
       }
-
-    }, (error) => {
-      this.logger.error("[KNOWLEDGE BASES COMP] ERROR delete kb: ", error);
+    }, (err) => {
+      this.logger.error("[KNOWLEDGE BASES COMP] ERROR delete kb: ", err);
       this.onOpenErrorModal(error);
     }, () => {
       this.logger.log("[KNOWLEDGE BASES COMP] delete kb *COMPLETE*");
@@ -345,9 +373,9 @@ export class KnowledgeBasesComponent implements OnInit, OnDestroy {
     this.openaiService.startScraping(data).subscribe((response: any) => {
       this.logger.log("start scraping response: ", response);
       if (response.error) {
-        this.notify.showWidgetStyleUpdateNotification("Indicizzazione non riuscita", 4, 'report_problem');
+        this.notify.showWidgetStyleUpdateNotification(this.msgErrorIndexingKb, 4, 'report_problem');
       } else {
-        this.notify.showWidgetStyleUpdateNotification('Indicizzazione terminata con successo', 2, 'done');
+        this.notify.showWidgetStyleUpdateNotification(this.msgSuccesIndexingKb, 2, 'done');
         this.checkStatusWithRetry(kb);
       }
     }, (error) => {

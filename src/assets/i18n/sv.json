@@ -1618,7 +1618,14 @@
         "StatusNotStarted": "Ej påbörjad",
         "StatusStarted": "Satte igång",
         "StatusFinished": "Färdiga",
-        "StatusError": "Fel"
+        "StatusError": "Fel",
+        "msgSuccesUpdateKb": "Kunskapsbasen har modifierats",
+        "msgSuccesAddKb": "Kunskapsbasen har lagts till",
+        "msgSuccesDeleteKb": "Knowledge Base har raderats",
+        "msgErrorDeleteKb": "Kunskapsbasen kunde inte raderas",
+        "msgErrorIndexingKb": "Indexering misslyckades",
+        "msgSuccesIndexingKb": "Indexeringen slutfördes",
+        "msgErrorAddUpdateKb": "Kunskapsbasen kunde inte läggas till eller redigeras"
     },
     "AutomationsDemoPageDescription":"Med våra “API-automatiseringar” kan du hantera massutsändningsmeddelanden på Whatsapp med hjälp av designerns automatiseringar kombinerat med enkelheten hos våra API: er, skicka meddelanden till alla kontakter i din favorit-CRM, ta emot status för skickade meddelanden (mottagna, lästa, etc. ) och mycket mer!",
     "Sunday": "söndag",
