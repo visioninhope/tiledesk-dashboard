@@ -42,7 +42,7 @@ export class HomeKbModalComponent implements OnInit {
   }
 
   getKnowledgeBaseSettings() {
-    this.kbService.getKbSettings().subscribe((kbSettings: KbSettings) => {
+    this.kbService.getKbSettingsPrev().subscribe((kbSettings: KbSettings) => {
       this.logger.log("[HOME-KB MODAL] get kbSettings: ", kbSettings);
       this.kbSettings = kbSettings;
       // this.kbsList = kbSettings.kbs;

@@ -95,7 +95,7 @@ export class HomeKbComponent implements OnInit {
     }
     this.newKb.name = this.newKb.url.substring(split_index);
 
-    this.kbService.addNewKb(this.kbSettings._id, this.newKb).subscribe((savedSettings: KbSettings) => {
+    this.kbService.addNewKbPrev(this.kbSettings._id, this.newKb).subscribe((savedSettings: KbSettings) => {
       this.getKnowledgeBaseSettings();
       let kb = savedSettings.kbs.find(kb => kb.url === this.newKb.url);
       this.checkStatus(kb).then((status_code) => {
@@ -111,7 +111,7 @@ export class HomeKbComponent implements OnInit {
   }
 
   getKnowledgeBaseSettings() {
-    this.kbService.getKbSettings().subscribe((kbSettings: KbSettings) => {
+    this.kbService.getKbSettingsPrev().subscribe((kbSettings: KbSettings) => {
       this.logger.log("[HOME-KB] get kbSettings: ", kbSettings);
       this.kbSettings = kbSettings;
     

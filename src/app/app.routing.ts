@@ -470,8 +470,8 @@ const routes: Routes = [
   { path: 'project/:projectid/knowledge-bases/:calledby', component: KnowledgeBasesComponent, canActivate: [AuthGuard]}, // when called from home
 
   // KNOWLEDGE BASES OLD
-  { path: 'project/:projectid/knowledge-bases-pre', component: KnowledgeBasesPreviousComponent, canActivate: [AuthGuard]},
-  { path: 'project/:projectid/knowledge-bases-pre/:calledby', component: KnowledgeBasesPreviousComponent, canActivate: [AuthGuard]},
+  { path: 'project/:projectid/knowledge-bases-prev', component: KnowledgeBasesPreviousComponent, canActivate: [AuthGuard]},
+  { path: 'project/:projectid/knowledge-bases-prev/:calledby', component: KnowledgeBasesPreviousComponent, canActivate: [AuthGuard]},
   
     // RESET PASSORD (i.e. page forgot psw & reset psw )
   { path: 'forgotpsw', component: ResetPswComponent },
