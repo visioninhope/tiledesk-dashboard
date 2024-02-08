@@ -60,6 +60,18 @@ export class KnowledgeBaseService {
   // ********** INITIALIZING SERVICE **********
   // ***************** END ********************
 
+  // getKbSettings() {
+  //   const httpOptions = {
+  //     headers: new HttpHeaders({
+  //       'Content-Type': 'application/json',
+  //       'Authorization': this.TOKEN
+  //     })
+  //   }
+  //   const url = this.SERVER_BASE_PATH + this.project_id + "/kb";
+  //   //const url = this.SERVER_BASE_PATH + this.project_id + "/kbsettings";
+  //   this.logger.log("[KNOWLEDGE BASE SERVICE] - get settings URL ", url);
+  //   return this.httpClient.get(url, httpOptions);
+  // }
 
   getKbSettings() {
     const httpOptions = {
@@ -68,8 +80,8 @@ export class KnowledgeBaseService {
         'Authorization': this.TOKEN
       })
     }
-    const url = this.SERVER_BASE_PATH + this.project_id + "/kb";
-    //const url = this.SERVER_BASE_PATH + this.project_id + "/kbsettings";
+    //const url = this.SERVER_BASE_PATH + this.project_id + "/kb";
+    const url = this.SERVER_BASE_PATH + this.project_id + "/kbsettings";
     this.logger.log("[KNOWLEDGE BASE SERVICE] - get settings URL ", url);
     return this.httpClient.get(url, httpOptions);
   }

@@ -144,6 +144,7 @@ import { EmailTicketingStaticComponent } from './static-pages/email-ticketing-st
 import { ActivateAppsumoProductComponent } from './create-project-wizard/activate-appsumo-product/activate-appsumo-product.component';
 import { CreateProjectGsComponent } from './create-project-wizard/create-project-gs/create-project-gs.component';
 import { KnowledgeBasesComponent } from './knowledge-bases/knowledge-bases.component';
+import { KnowledgeBasesPreviousComponent } from './knowledge-bases-previous/knowledge-bases-previous.component';
 import { CnpIsMobileComponent } from './create-new-project/cnp-is-mobile/cnp-is-mobile.component';
 import { CnpTemplatesComponent } from './create-new-project/cnp-templates/cnp-templates.component';
 import { OnboardingWelcomeComponent } from './create-new-project/onboarding-welcome/onboarding-welcome.component';
@@ -467,7 +468,12 @@ const routes: Routes = [
   // KNOWLEDGE BASES
   { path: 'project/:projectid/knowledge-bases', component: KnowledgeBasesComponent, canActivate: [AuthGuard]},
   { path: 'project/:projectid/knowledge-bases/:calledby', component: KnowledgeBasesComponent, canActivate: [AuthGuard]}, // when called from home
-  // RESET PASSORD (i.e. page forgot psw & reset psw )
+
+  // KNOWLEDGE BASES OLD
+  { path: 'project/:projectid/knowledge-bases-pre', component: KnowledgeBasesPreviousComponent, canActivate: [AuthGuard]},
+  { path: 'project/:projectid/knowledge-bases-pre/:calledby', component: KnowledgeBasesPreviousComponent, canActivate: [AuthGuard]},
+  
+    // RESET PASSORD (i.e. page forgot psw & reset psw )
   { path: 'forgotpsw', component: ResetPswComponent },
   { path: 'resetpassword/:resetpswrequestid', component: ResetPswComponent },
 

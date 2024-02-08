@@ -78,7 +78,6 @@ export class SettingsSidebarComponent implements OnInit {
     this.getCurrentRoute();
     // this.getMainContentHeight();
     this.listenSidebarIsOpened();
-
   }
 
   ngAfterContentInit() {

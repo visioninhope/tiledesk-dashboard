@@ -377,7 +377,8 @@ import { KnowledgeBaseTableComponent } from './knowledge-bases/modals/knowledge-
 import { MatTableModule } from '@angular/material/table';
 import { MatPaginatorModule } from '@angular/material/paginator';
 import { MatSortModule } from '@angular/material/sort';
-import { ModalErrorComponent } from './knowledge-bases/modals/modal-error/modal-error.component'; 
+import { ModalErrorComponent } from './knowledge-bases/modals/modal-error/modal-error.component';
+import { KnowledgeBasesPreviousComponent } from './knowledge-bases-previous/knowledge-bases-previous.component'; 
 
 // NOTE: Eliminazione del local storage produce inconsistenza delle instances Firebase. Si salta il logout.
 
@@ -665,7 +666,8 @@ const appInitializerFn = (appConfig: AppConfigService, brandService: BrandServic
     ModalPreviewKnowledgeBaseComponent,
     ModalDetailKnowledgeBaseComponent,
     KnowledgeBaseTableComponent,
-    ModalErrorComponent
+    ModalErrorComponent,
+    KnowledgeBasesPreviousComponent
   ],
   imports: [
     TooltipModule.forRoot(CutomTooltipOptions as TooltipOptions),
